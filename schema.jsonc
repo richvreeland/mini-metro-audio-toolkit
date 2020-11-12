@@ -1,0 +1,562 @@
+{
+	"$schema": "https://json-schema.org/draft-07/schema#",
+	"$id": "mini-metro-audio-loadout",
+	"title": "Loadout",
+	"description": "Settings for driving music and sound for a city.",
+	"type": "object",
+	"properties": {
+		"id" : {
+			"description": "The identifying name for this loadout, as defined in the game build.",
+			"type": "string"
+		},
+		"base" : {
+			"description": "The id of the loadout from which this loadout derives/inherits. Generally \"city\".",
+			"type": "string"
+		},
+		"constants" : {
+			"description": "An object full of general and important, but entirely optional parameters.",
+			"type": "object",
+			"properties": {
+				"MuteMetronome": {
+					"description": "Whether or not to mute the metronome. When unmuted, the ticking clock is always on and serves as the metronome, for testing purposes. Editor will yell at you when this is set to false.",
+					"type":"boolean",
+					"enum": [true]
+				},
+				"Rhythms": { 
+					"description": "An array of pulse length options for LineLoop in this level. This list is generally non-repeating, in descending numerical order from largest to smallest. Worth noting: this rhythm list gets turned into a palindrome (ie. [12, 6, 4, 3] -> [12, 6, 4, 3, 4, 6]) during gameplay, so that the rhythms listed cycle through in a natural manner.",
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"LineLoop_Pulse": { 
+					"description": "This is the number of subdivisions of the MasterPulse to use for LineLoop modules in this level, or more specifically, the maximum frequency at which these sounds can be triggered. By default this number is 12, which afford you all manner of duplet and triplet rhythms, such as 2, 3, 4, 6, 8, 9, 12, 18, 24.  For other types of pulses, such as quintuplets and septuplets, you will need to use a higher subdivision in order to get the intended effect. For instance, paris.txt contains \"LineLoop_Pulse\" : 420, which allows for rhythms such as 120 (2/7),  140 (1/3), and  168 (2/5). In other words, that city contains duplet, triplet, quintuplet AND septuplet rhythms. Important to note: the smallest supported rhythm is 1/4 . You can use smaller rhythms in theory, but keep in mind that Mini Metro has a fast forward mode, so it will probably sound really insane. Also the offset system will not support those rhythms. ALSO important to note: If you choose to use a pulse other than 12, you will likely have to override all of the pulse constants so that they get the correct value. ie. the default value of TrainArrives_Rhythm is 2, which is equivalent to 1/6. That value would not mean the same thing if you change LineLoop_Pulse to a greater value, like 24.",
+					"type": "integer",
+					"examples": [12],
+					"minimum": 0
+				},
+				"Steps_Double": {
+					"description": "Represents the rhythmic offsets available for the \"Double\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_Double = p * 2. These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_5BarTriplet": {
+					"description": "Represents the rhythmic offsets available for the \"5BarTriplet\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_5BarTriplet = p * (5/3). These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_DottedWhole": {
+					"description": "Represents the rhythmic offsets available for the \"DottedWhole\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_DottedWhole = p * (3/2). These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_4BarTriplet": {
+					"description": "Represents the rhythmic offsets available for the \"4BarTriplet\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_4BarTriplet = p * (4/3). These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_Whole": {
+					"description": "Represents the rhythmic offsets available for the \"Whole\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_Whole = p * 1. These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_DottedHalf": {
+					"description": "Represents the rhythmic offsets available for the \"DottedHalf\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_DottedHalf = p * (3/4). These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_2BarTriplet": {
+					"description": "Represents the rhythmic offsets available for the \"2BarTriplet\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_2BarTriplet = p * (2/3). These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_Half": {
+					"description": "Represents the rhythmic offsets available for the \"Half\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_Half = p * (1/2). These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_1BarTriplet": {
+					"description": "Represents the rhythmic offsets available for the \"1BarTriplet\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_1BarTriplet = p * (1/3). These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_Quarter": {
+					"description": "Represents the rhythmic offsets available for the \"Quarter\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_Quarter = p * (1/4). These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_2BarQuintuplet": {
+					"description": "Represents the rhythmic offsets available for the \"2BarQuintuplet\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_2BarQuintuplet = p * (2/5). These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_3BarQuintuplet": {
+					"description": "Represents the rhythmic offsets available for the \"3BarQuintuplet\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_3BarQuintuplet = p * (3/5). These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_4BarQuintuplet": {
+					"description": "Represents the rhythmic offsets available for the \"4BarQuintuplet\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_4BarQuintuplet = p * (4/5). These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_2BarSeptuplet" : {
+					"description": "Represents the rhythmic offsets available for the \"2BarSeptuplet\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_2BarSeptuplet = p * (2/7). These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_3BarSeptuplet" : {
+					"description": "Represents the rhythmic offsets available for the \"3BarSeptuplet\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_3BarSeptuplet = p * (3/7). These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Steps_4BarSeptuplet" : {
+					"description": "Represents the rhythmic offsets available for the \"4BarSeptuplet\" LineLoop rhythm type.\nWhere LineLoop_Pulse is represented by the letter p, and a Bar represents one MasterPulse (think of it as a really fast bar), Steps_4BarSeptuplet = p * (4/7). These offsets are options within the pulse where new pulsing elements can enter. The more rhythmic offset options you make available for a given rhythm, the more quickly the music system can react to new gameplay changes. For instance, if supply an array of [0], a new LineLoop will wait until the next MasterPulse (about 0.8 secs) to enter.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Swing": {
+					"description": "This system is a little bit jank, but does the job. Swing is a value from 0..1 , where 0 is no swing, and 1  will swing the note to an extreme degree. Also worth noting: given a triplet style (1 bar, 2 bar or 4 bar) rhythm, the rhythm will be swung every /third/ note instead of every second note.",
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1
+				},
+				"Swing_Range": {
+					"description": "An array of two values representing the range of rhythms that get swung.\nFor instance : given \"LineLoop_Pulse\" : 12  and \"Rhythms\": 12, 8, 6, 4, 3, a range of [0,4] will swing 3 and 4.",
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"Flam_Limit": {
+					"description": "The maximum number of sounds to arpeggiate for events that use the Arpeggio module. This includes peeps appearing, embarking and transferring. This module takes gameplay events that come in at the same time, and spreads them out in a rhythmically pleasing manner.",
+					"type": "integer",
+					"minimum": 0
+				},
+				"PeepEmbarks_Flam_Pulse": {
+					"description": "The pulse, or maximum frequency of sound triggering for Peep Embarks sounds.  These sounds are all subject to flamming (aka arpeggiation). This value represents a subdivision of the MasterPulse.",
+					"type": "integer",
+					"minimum": 0
+				},
+				"PeepEmbarks_Rhythm": {
+					"description": "This represents the reaction time for arpeggiating peep embarkation events. For instance, given a PeepEmbarks_Flam_Pulse of 12, a value of 3 would mean a new arpeggiation could start once every 3 pulses.",
+					"type": "integer",
+					"minimum": 0
+				},
+				"PeepAppears_Flam_Pulse": {
+					"description": "How many subdivisions of the master pulse to use for triggering Peep Appears sounds.  These sounds are all subject to flamming (aka arpeggiation). This value represents a subdivision of the MasterPulse.",
+					"type": "integer",
+					"minimum": 0
+				},
+				"PeepAppears_Step_Standard": {
+					"description": "This controls which step in the pulse is reserved for Standard (Square, Circle, Triangle) peeps. Peep appearance events always begin on the hour (on the downbeat of the MasterPulse).",
+					"type": "integer",
+					"minimum": 0
+				},
+				"PeepAppears_Step_Special": {
+					"description": "This controls which step in the pulse is reserved for Special (everything but Circle, Square, Triangle) peeps.",
+					"type": "integer",
+					"minimum": 0
+				},
+				"TrainArrives_Rhythm": {
+					"description": "The frequency with which the Train Arrival sound fires. Uses LineLoop_Pulse.",
+					"type": "integer",
+					"minimum": 0
+				},
+				"ChordTone_Pulse": {
+					"description": "Think of this as 1 / X, where 1 is the Master Pulse and X is the inputted value. When the game plays chords (generally on week end and game over screens), the length of each chord tone as a subdivision of the master pulse.",
+					"type": "integer",
+					"minimum": 0
+				},
+				"Screen_PlayChords": {
+					"description": "DEPRECATED. Whether or not to play chords alongside bass notes on game over and new asset screens.",
+					"type": "boolean"
+				},
+				// "PlayChords_GameOver": {
+				// 	"description": "Whether or not to play chords alongside bass notes on game over and new asset screens.",
+				// 	"type": "boolean"
+				// },
+				// "PlayChord_WeekOver": {
+				// 	"description": "Whether or not to play chords alongside bass notes on game over and new asset screens.",
+				// 	"type": "boolean"
+				// },
+				"Percussion_PitchVar": {
+					"description": "Controls the amount of pitch variation for Peep Appear and Transfer sounds by adding a random deviation, +/- within the value specified. ie. 0.2 means the pitch will be anywhere in the range 0.8..1.2.\nFor reference: 0.5 is down an octave, and 2 is up an octave.",
+					"type": "number",
+					"minimum": 0.01,
+					"maximum": 4
+				},
+				"VoiceLimit_FadeTime": {
+					"description": "By default, the total polyphony of LineLoop voices playing at any one time is limited to the number of lines currently in the level. When that limit is reached, the oldest voice is faded out using the duration provided by this constant.",
+					"type": "number"
+				},
+				"VoiceLimit_Static": {
+					"description": "You can optionally specify a hard limit on the number of voices LineLoop uses. Values less than 1 are ignored.",
+					"type": "integer",
+					"minimum": 1
+				},
+				"FadeIn_Times": {
+					"description": "A four number array representing the fade in time for all LineLoop samples at different TimeScale (game speed) settings. A fade time of 0 means the samples are not faded in. A fade time of 1.5 would mean each sample takes 1.5 seconds to fade in.\nHere are the TimeScale settings as they correspond to the array: [Single Slow, Single, Double Slow, Double].",
+					"type": "array",
+					"minItems": 4,
+					"maxItems": 4,
+					"items": {
+						"type": "number",
+						"minimum": 0
+					}
+				},
+				"Transpositions": {
+					"description": "An array of key choices for the level to start in, given as relative values. ie. -3 is down three semitones from C, or A#. Options range from -12..12. Note: if using values close to the edges of the range, many of the notes will be transposed up/down an octave in order to fit within the range of available pitches.",
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": -12,
+						"maximum": 12
+					}
+				},
+				"Octave_Chance": {
+					"description": "A 0..1 value representing the probability that LineLoop notes are triggered up an octave.",
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1
+				},
+				"Train_Engines": {
+					"description": "An array of engine types to use for this city, chosen at random.",
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": ["Scooter", "SixEight", "TwelveSixteen", "Three", "Four", "Orange", "Shinkansen"]
+					}
+				},
+				"Train_AssignEngineByLine": {
+					"description": "Whether or not to use the the Train_Engines array as an ordered assignment of which engine to use for which line.",
+					"type": "boolean"
+				}/*,
+				"LineCreated_Gain": {
+					"description": "For changing the volume level of the specified audio module. Generally not recommended to change, but available should you choose.",
+					"type": "number"
+				},
+				"LineLoop_Gain": {
+					"description": "For changing the volume level of the specified audio module. Generally not recommended to change, but available should you choose.",
+					"type": "array"
+				},
+				"StationAdded_Gain": {
+					"description": "For changing the volume level of the specified audio module. Generally not recommended to change, but available should you choose.",
+					"type": "number"
+				},
+				"Bass_Gain": {
+					"description": "For changing the volume level of the specified audio module. Generally not recommended to change, but available should you choose.",
+					"type": "number"
+				},
+				"Chord_Gain": {
+					"description": "For changing the volume level of the specified audio module. Generally not recommended to change, but available should you choose.",
+					"type": "number"
+				},
+				"StationCountdown_Gain": {
+					"description": "For changing the volume level of the specified audio module. Generally not recommended to change, but available should you choose.",
+					"type": "array"
+				},
+				"PeepImpatient_Gain": {
+					"description": "For changing the volume level of the specified audio module. Generally not recommended to change, but available should you choose.",
+					"type": "number"
+				},
+				"PeepAppears_Gain": {
+					"description": "For changing the volume level of the specified audio module. Generally not recommended to change, but available should you choose.",
+					"type": "number"
+				},
+				"PeepEmbarks_Gain": {
+					"description": "For changing the volume level of the specified audio module. Generally not recommended to change, but available should you choose.",
+					"type": "number"
+				},
+				"TrainArrives_Gain": {
+					"description": "For changing the volume level of the specified audio module. Generally not recommended to change, but available should you choose.",
+					"type": "array"
+				},
+				"TrainEngine_Gain": {
+					"description": "For changing the volume level of the specified audio module. Generally not recommended to change, but available should you choose.",
+					"type": "array"
+				},
+				"Train_Gain_RailcarModifier": {
+					"description": "A multiplier for gain as a result of railcars being added. Generally not recommended to change, but available should you choose.",
+					"type": "number"
+				},
+				"Clock_Gain": {
+					"description": "For changing the volume level of the specified audio module. Generally not recommended to change, but available should you choose.",
+					"type": "number"
+				}*/
+			}
+		},
+		"harmonies" : {
+			"description": "The selection of musical notes is handled within this object. It's important to note that the \"HARMONY TEMPLATE\" section of city.txt is not the parent of harmonies, it's merely an example. In other words, this section has no inheritance scheme and is a manadatory definition.\nNote: Enharmonic pitches (ie. Bb or A#) are always represented with a #, so if you desired a Bb4, use A#4.",
+			"type": "object",
+			"required": ["weeks", "assignments"],
+			"properties": {
+				"assignments" : {
+					"description": "Which sequence index to use for each line. Cities typically have 7 lines, so this array is typically 7 entries long. For instance, if you wanted all 7 lines to use the same harmonic sequence, and you only had one sequence, the assignments would be: [0, 0, 0, 0, 0, 0, 0]. ",
+					"minItems": 1,
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"order" : {
+					"description": "The linear, repeating order of weeks to use week over week in game. This is an optional parameter, as the default behavior is to use harmonic weeks in the order they are specified.",
+					"minItems": 1,
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				"pedalingBass": {
+					"description": "Whether or not bass should not always change, and only update when the least recently update line is updated, and use sequence 0. Optional and true by default. When set to false, bass sequence will progress to the next note every time a bass note is fired.",
+					"type": "boolean"
+				},
+				"randomize": {
+					"description": "Whether or not to randomize the harmonic week order. false by default.",
+					"type": "boolean"
+				},
+				"weeks": {
+					"description": "Each entry represents a week. By default this list of entries loops, so if you've reached week 4 & you only have 3 entries, it will loop around and use the 1st entry.",
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"required": ["sequences", "bass"],
+						"properties": {
+							"sequences" : {
+								"description": "* A 2D list of pitch sequences, where pitches can range from C2 to B5.\n* These sequences can be assigned to different lines using the assignments property (see below).\n* If multiple lines are assigned to the same sequence, they are assigned notes in a linear fashion.\n\t* ie. if lines 0, 1 & 2 are all assigned the same sequence of [\"C3\", \"E3\", \"G3\"] , line 0 will get C3,  1 gets E3, and so forth.\n* All sequences will progress forward by one entry when the least recently edited line gets edited by the player. \n\t* in the previous example, this would result in line 0 getting E3, line 1 getting G3, and line 2 looping back around to receive C3.",
+								"minItems": 1,
+								"type": "array",
+								"items": {
+									"type": "array",
+									"items": {
+										"$ref": "#/definitions/note"
+									}
+								}
+							},
+							"bass" : {
+								"description": "A linear list of pitch sequences, where pitches can range from C to B. Octave range is handled automatically (basically, it's low!)\nBass notes progress forward with the standard sequences mentioned above.",
+								"minItems": 1,
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/bassNote"
+								}
+							},
+							"screens" : {
+								"description": " These are screens where a chord can optionally be triggered. These definitions are relative to the week in which they are defined.\nEach entry requires a sequence where the 1st array member is a bass note, ie. D, followed by chord tones, ie. F3.",
+								"minItems": 1,
+								"type": "object",
+								"properties": {
+									"GameOver": {
+										"allOf": [
+											{ "description": "The game over screen. Pretty self-explanatory !" },
+											{ "$ref": "#/definitions/screen" }
+										]
+									},
+									"NewAsset": {
+										"allOf": [
+											{ "description": "The week end screen where you can acquire new assets, such as tunnels and carriages." },
+											{ "$ref": "#/definitions/screen" }
+										]
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"modules" : {
+			"type":"array",
+			"items": {
+				"type":"object",
+				"defaultSnippets": [
+					{
+						"label": "Beat Module",
+						"description": "Play a kick drum at a pre-defined rhythm, but only when the game is not paused. Has some customizable properties. Will also update at the same time as the LineLoop Rhythms. For now, to get this to work properly, simply copy the module over from one of these other cities.",
+						"body": {
+							"type": "Beat",
+							"filter": "^{ \"type\": \"CityStart\" }",
+							"Rhythms": "^[12]",
+							"Rhythms_Double": "^[24]",
+							"StartingWeekIndex": "^0",
+							"FadeInLength": "^0",
+							"gain": "^1.0",
+							"pulse": "^12"
+						}
+					},
+					{
+						"label": "PeepAppears Override (1)",
+						"description": "If you want more control than Constant.PeepAppears_Step_Standard and Constant.PeepAppears_Step_Special, this will allow you to set the step values individually for shapes.",
+						"body": {
+							"id" : "PeepAppears: Circle",   "step": "^${1:0}"
+						}
+					},
+					{
+						"label": "PeepAppears Override (All)",
+						"description": "If you want more control than Constant.PeepAppears_Step_Standard and Constant.PeepAppears_Step_Special, this will allow you to set the step values individually for shapes.",
+						"body": "^{ \"id\" : \"PeepAppears: Circle\",   \"step\": ${1:0} },\n{ \"id\" : \"PeepAppears: Square\",   \"step\": ${2:0} },\n{ \"id\" : \"PeepAppears: Triangle\", \"step\": ${3:0} },\n{ \"id\" : \"PeepAppears: Wedge\",    \"step\": ${4:0} },\n{ \"id\" : \"PeepAppears: Egg\",      \"step\": ${5:0} },\n{ \"id\" : \"PeepAppears: Diamond\",  \"step\": ${6:0} },\n{ \"id\" : \"PeepAppears: Cross\",    \"step\": ${7:0} },\n{ \"id\" : \"PeepAppears: Star\",     \"step\": ${8:0} },\n{ \"id\" : \"PeepAppears: Pentagon\", \"step\": ${9:0} },\n{ \"id\" : \"PeepAppears: Gem\",      \"step\": ${10:0} }"
+					}
+				],
+				"properties": {
+					"type": {
+						"description": "Beat.type : the name of the module.",
+						"type":"string",
+						"enum": ["Beat"]
+					},
+					"filter" : {
+						"description": "Beat.filter : This is the kind of event the Beat module responds to. In order to work properly, this must be set to CityStart.",
+						"type":"object",
+						"required": ["type"],
+						"properties": {
+							"type": {
+								"type":"string",
+								"enum": ["CityStart"]
+							}
+						}
+					},
+					"Rhythms" : {
+						"description": "Beat.Rhythms : Designate rhythms for the beat object - operates more or less in the same fashion as the Rhythms list for LineLoop in constants.",
+						"type":"array",
+						"minItems": 1,
+						"items": {
+							"type":"integer",
+							"minimum": 0
+						}
+					},
+					"Rhythms_Double" : {
+						"description": "Beat.Rhythms_Double : By default, all rhythms are doubled in speed when in TimeScale.Double. This allows you to override that. For instance, if you have a rhythm that is swift sounding in TimeScale.Single, it may now be too fast to sound good at the Double scale. This alleviates that problem.",
+						"type": "array",
+						"minItems": 1,
+						"items": {
+							"type":"integer",
+							"minimum": 0
+						}
+					},
+					"StartingWeekIndex" : {
+						"type":"integer",
+						"description": "Beat.StartingWeekIndex : Represents how many weeks it will take before you start hearing the beat. 0 means play from the start of the game.",
+						"minimum": 0
+					},
+					"gain" : {
+						"description": "Beat.gain : Specify gain of the beat.",
+						"type":"number",
+						"examples": [1.0],
+						"minimum": 0
+					},
+					"pulse" : {
+						"type":"integer",
+						"examples": [12],
+						"minimum": 0,
+						"description": "Beat.pulse : Operates in the same way LineLoop_Pulse does."
+					},
+					"FadeInLength": {
+						"description": "Beat.FadeInLength : Optionally fade kick in over n master pulses the very first time.",
+						"minimum": 0,
+						"type":"integer"
+					},
+					"id" : {
+						"description": "PeepAppears.id : Used for directly overriding a PeepAppears module from \"city.txt\" by it's id.",
+						"type":"string",
+						"enum": ["PeepAppears: Circle", "PeepAppears: Square", "PeepAppears: Triangle", "PeepAppears: Wedge", "PeepAppears: Egg", "PeepAppears: Diamond", "PeepAppears: Cross", "PeepAppears: Star", "PeepAppears: Pentagon", "PeepAppears: Gem"]
+					},
+					"step" : {
+						"type": "integer",
+						"minimum": 0,
+						"description": "PeepAppears.step : When overriding PeepAppears shapes, used to denote which step in the LineLoop Pulse this shape should quantize its appearances to."
+					}
+				},
+				"dependencies": {
+					"id"   : ["step"],
+					"step" : ["id"],
+					"filter": ["type"],
+					"type" : ["filter", "Rhythms", "StartingWeekIndex", "gain", "pulse"],
+					"Rhythms": ["type"],
+					"StartingWeekIndex": ["type"],
+					"gain": ["type"],
+					"pulse": ["type"],
+					"Rhythms_Double": ["Rhythms"],
+					"FadeInLength": ["type"]	
+				}
+			}
+		}
+	},
+	"definitions": {
+		"note": {
+			"type": "string",
+			"enum": ["C2", "C#2", "D2", "D#2", "E2", "F2", "F#2", "G2", "G#2", "A2", "A#2", "B2", "C3", "C#3", "D3", "D#3", "E3", "F3", "F#3", "G3", "G#3", "A3", "A#3", "B3", "C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4", "C5", "C#5", "D5", "D#5", "E5", "F5", "F#5", "G5", "G#5", "A5", "A#5", "B5"]
+		},
+		"bassNote": {
+			"type": "string",
+			"enum": ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+		},
+		"screen" : {
+			"type": "array",
+			"minItems": 1,
+			"items": [
+				{
+					"$ref": "#/definitions/bassNote"
+				}
+			],
+			"additionalItems": {
+				"$ref": "#/definitions/note"
+			}
+		}
+	},
+	"required": [ "id", "base", "harmonies"]
+  }

@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.txt": "json"
+		},
+		"json.schemas": [
+
+			{
+				"fileMatch": [
+					"/Cities/*.txt"
+				],
+				"url": "/schema.jsonc"
+			}
+		],
+	}
+}
