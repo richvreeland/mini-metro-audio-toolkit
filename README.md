@@ -238,23 +238,5 @@ Any overrides done in this manner will supersede any value you supply to `PeepAp
 
 - - - -
 
-## Debug Key Commands
-
-```
-H : Increase Score
-I : Invincible
-L : Kill Peeps
-P : Add Random Peep
-X : Die
-S : Add Assets
-M : Mutate a Random Station
-F : Fast Forward to end game
-Q : Time Scale Increase
-A : Time Scale Decrease
-N : Audio Debugging
-```
-
-- - - -
-
 ## Going Beyond
 Of course, there are more tweaks and overrides you can make to your city, if you're feeling adventurous. These are simply the standard, most commonly used applications. Feel free to go beyond this guide, at your own peril !
