@@ -4,7 +4,7 @@ This toolkit contains a guide, and a VSCode setup for working on Audio Loadout .
 
 For VSCode, simply copy the .jsonc and .code-workspace file into the same directory where you're working on the Loadout text files.
 
-# Mini Metro : Guidelines for Building a City Soundscape
+# Guidelines for Building a City Soundscape
 
 Each city in Mini Metro has its own text file which specifies how the music and sound for that city should be. For instance, London has a file `london.txt`. All of these text files inherit from a base text file, `city.txt`. This file contains the default settings for all cities. Any of these settings can be overridden by individual cities.
 
