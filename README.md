@@ -1,7 +1,6 @@
 # Mini Metro : Guidelines for Building a City Soundscape
-Last Update : October 18th, 2020
 
-Each city in Mini Metro has its own text file which specifies how the music and sound for that city should be. For instance, London has a file `london.txt`. All of these text files inherit from a master text file, `city.txt`. This file contains the default settings for all cities. Any of these settings can be overridden by individual cities.
+Each city in Mini Metro has its own text file which specifies how the music and sound for that city should be. For instance, London has a file `london.txt`. All of these text files inherit from a base text file, `city.txt`. This file contains the default settings for all cities. Any of these settings can be overridden by individual cities.
 
 ## Instruments
 It's important to first know both literally and symbolically which game objects are responsible for making the sound in Mini Metro.
@@ -253,5 +252,3 @@ N : Audio Debugging
 
 ## Going Beyond
 Of course, there are more tweaks and overrides you can make to your city, if you're feeling adventurous. These are simply the standard, most commonly used applications. Feel free to go beyond this guide, at your own peril !
-
-#project/done/mini metro#
