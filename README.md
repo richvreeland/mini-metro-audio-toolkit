@@ -27,23 +27,23 @@ Note: Enharmonic pitches (ie. `Bb` or `A#`) are always represented with a `#`, s
 `weeks`  (required)
 Each entry represents a week. By default this list of entries loops, so if you've reached week 4 & you only have 3 entries, it will loop around and use the 1st entry.
 	
-	* `sequences`  (required)
-		* A 2D list of pitch sequences, where pitches can range from `C2` to `B5`. 
-		* These sequences can be assigned to different lines using the `assignments` property (see below).
-		* If multiple lines are assigned to the same sequence, they are assigned notes in a linear fashion.
-			* ie. if lines 0, 1 & 2 are all assigned the same sequence of `["C3", "E3", "G3"]` , line 0 will get `C3`,  1 gets `E3`, and so forth.
-		* All sequences will progress forward by one entry when the least recently edited line gets edited by the player. 
-			* in the previous example, this would result in line 0 getting `E3`, line 1 getting `G3`, and line 2 looping back around to receive `C3`.
-	
-	* `bass`
-		* A linear list of pitch sequences, where pitches can range from `C` to `B`.  Octave range is handled automatically (basically, it's low!)
-		* Bass notes progress forward with the standard sequences mentioned above.
-	
-	* `screens` 
-		* These are screens where a chord can optionally be triggered. These definitions are relative to the week in which they are defined.
-		* Each entry requires a sequence where the 1st array member is a bass note, ie. `D`, followed by chord tones, ie. `F3`.  Screen Options include :
-			* `NewAsset`  : the week end screen where you can acquire new assets, such as tunnels and carriages.
-			* `GameOver` : the game over screen. Pretty self-explanatory !
+* `sequences`  (required)
+	* A 2D list of pitch sequences, where pitches can range from `C2` to `B5`. 
+	* These sequences can be assigned to different lines using the `assignments` property (see below).
+	* If multiple lines are assigned to the same sequence, they are assigned notes in a linear fashion.
+		* ie. if lines 0, 1 & 2 are all assigned the same sequence of `["C3", "E3", "G3"]` , line 0 will get `C3`,  1 gets `E3`, and so forth.
+	* All sequences will progress forward by one entry when the least recently edited line gets edited by the player. 
+		* in the previous example, this would result in line 0 getting `E3`, line 1 getting `G3`, and line 2 looping back around to receive `C3`.
+
+* `bass`
+	* A linear list of pitch sequences, where pitches can range from `C` to `B`.  Octave range is handled automatically (basically, it's low!)
+	* Bass notes progress forward with the standard sequences mentioned above.
+
+* `screens` 
+	* These are screens where a chord can optionally be triggered. These definitions are relative to the week in which they are defined.
+	* Each entry requires a sequence where the 1st array member is a bass note, ie. `D`, followed by chord tones, ie. `F3`.  Screen Options include :
+		* `NewAsset`  : the week end screen where you can acquire new assets, such as tunnels and carriages.
+		* `GameOver` : the game over screen. Pretty self-explanatory !
 
 
 `randomize`
@@ -205,20 +205,20 @@ These constants are for mixing volume levels of the various audio modules. Gener
 
 ## Optional Modules
 
-> `Beat`  
-> This is a special module that is only used in a few cities, such as Berlin, Stockholm, Singapore, and Washington DC.  It plays a kick drum at a pre-defined rhythm, but only when the game is not paused. and has some customizable properties as listed below. It will also update at the same time as the LineLoop `Rhythms`. For now, to get this to work properly, simply copy the module over from one of these other cities.  Only properties that can be altered safely are listed below :  
->   
-> `Rhythms`  
-> This is a list that operates more or less in the same fashion as `LineLoop_Pulse`.  
->   
-> `Rhythms_Double`  
-> By default, all rhythms are doubled in speed when in `TimeScale.Double`. This allows you to override that. For instance, if you have a rhythm that is swift sounding in `TimeScale.Single`, it may now be too fast to sound good at the Double scale. This alleviates that problem.  
->   
-> `StartingWeekIndex`  
-> This is an integer value that represents how many weeks it will take before you start hearing the beat. `0` means play from the start.  
->   
-> `gain`, `pulse`   
-> These operate as all other modules do.  
+`Beat`  
+This is a special module that is only used in a few cities, such as Berlin, Stockholm, Singapore, and Washington DC.  It plays a kick drum at a pre-defined rhythm, but only when the game is not paused. and has some customizable properties as listed below. It will also update at the same time as the LineLoop `Rhythms`. For now, to get this to work properly, simply copy the module over from one of these other cities.  Only properties that can be altered safely are listed below :  
+   
+`Rhythms`  
+This is a list that operates more or less in the same fashion as `LineLoop_Pulse`.  
+   
+`Rhythms_Double`  
+By default, all rhythms are doubled in speed when in `TimeScale.Double`. This allows you to override that. For instance, if you have a rhythm that is swift sounding in `TimeScale.Single`, it may now be too fast to sound good at the Double scale. This alleviates that problem.  
+   
+`StartingWeekIndex`  
+This is an integer value that represents how many weeks it will take before you start hearing the beat. `0` means play from the start.  
+   
+`gain`, `pulse`   
+These operate as all other modules do.  
 
 - - - -
 
