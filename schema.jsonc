@@ -225,14 +225,14 @@
 					"description": "DEPRECATED. Whether or not to play chords alongside bass notes on game over and new asset screens.",
 					"type": "boolean"
 				},
-				// "PlayChords_GameOver": {
-				// 	"description": "Whether or not to play chords alongside bass notes on game over and new asset screens.",
-				// 	"type": "boolean"
-				// },
-				// "PlayChord_WeekOver": {
-				// 	"description": "Whether or not to play chords alongside bass notes on game over and new asset screens.",
-				// 	"type": "boolean"
-				// },
+				"PlayChords_GameOver": {
+					"description": "Whether or not to play chords alongside bass notes on game over and new asset screens.",
+					"type": "boolean"
+				},
+				"PlayChord_WeekOver": {
+					"description": "Whether or not to play chords alongside bass notes on game over and new asset screens.",
+					"type": "boolean"
+				},
 				"Percussion_PitchVar": {
 					"description": "Controls the amount of pitch variation for Peep Appear and Transfer sounds by adding a random deviation, +/- within the value specified. ie. 0.2 means the pitch will be anywhere in the range 0.8..1.2.\nFor reference: 0.5 is down an octave, and 2 is up an octave.",
 					"type": "number",
