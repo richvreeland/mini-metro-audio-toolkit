@@ -19,7 +19,9 @@ To create a custom audio loadout for this city, create a file called `audio.json
 }
 ```
 
-Set the `id` property within this file to something appropriate. The `audioLoadoutId` string in `city.json` must match the `id` in `audio.json`.
+Set the `id` property within this file to something appropriate.
+
+The `audioLoadoutId` string in `city.json` must match the `id` in `audio.json`.
 
 # Guidelines for Building a City Soundscape
 
