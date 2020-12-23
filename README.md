@@ -44,7 +44,7 @@ Most of the station sounds are immediate and thus locked in, however it's worth 
 
 ## Harmony Progression System
 
-The selection of musical notes is handled within the `harmonies` section of a city's txt file. It's important to note that the `HARMONY TEMPLATE` section of `city.txt` is not the parent of `harmonies`, it's merely an example. In other words, this section has no inheritance scheme. Below are its associated properties.
+The selection of musical notes is handled within the `harmonies` section of a city's txt file. It's important to note that the `HARMONY TEMPLATE` section of `base-example.txt` is not the parent of `harmonies`, it's merely an example. In other words, this section has no inheritance scheme. Below are its associated properties.
 
 Note: Enharmonic pitches (ie. `Bb` or `A#`) are always represented with a `#`, so if you desired a `Bb4`, use `A#4`.
 
