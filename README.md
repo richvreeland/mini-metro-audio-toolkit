@@ -23,7 +23,7 @@ Set the `id` property within this file to something appropriate. The `audioLoado
 
 # Guidelines for Building a City Soundscape
 
-Each city in Mini Metro has its own text file which specifies how the music and sound for that city should be. For instance, London has a file `london.txt`. All of these text files inherit from a base text file, `city.txt`. This file contains the default settings for all cities. Any of these settings can be overridden by individual cities.
+Each city in Mini Metro has its own json text file which specifies how the music and sound for that city should be. All of these text files inherit from a base file. I've included an example of such a file in this repo, called `city.json`. This file contains the default settings for all cities. Any of these settings can be overridden by individual cities.
 
 ## Instruments
 It's important to first know both literally and symbolically which game objects are responsible for making the sound in Mini Metro.
