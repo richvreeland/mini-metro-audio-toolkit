@@ -1,8 +1,25 @@
 # Mini Metro Audio Toolkit
 
-This toolkit contains a guide, and a VSCode setup for working on Audio Loadout .txt files for Mini Metro. If you use a different code editor, the JSON Schema file may still come in handy for setting up error linting/etc. in the environment of your choice.
+This toolkit contains a guide, and a VSCode setup for working on Audio Loadout .json files for Mini Metro. If you use a different code editor, the JSON Schema file may still come in handy for setting up error linting/etc. in the environment of your choice.
 
-For VSCode, simply copy the .jsonc and .code-workspace file into the same directory where you're working on the Loadout text files.
+For VSCode, simply put the .jsonc and .code-workspace files into the same directory where you're working on the Loadout files.
+
+# Map Setup
+
+This guide is meant to be used alongside the [Workshop Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2295902845) for creating custom Mini Metro maps. If you're mainly interested in the audio side of things, you can always download someone else's custom map and edit the audio loadout.
+
+Follow the [Workshop Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2295902845) to find the location of custom maps on your computer. In the directory of each custom map you will find a `city.json` file.
+
+To create a custom audio loadout for this city, create a file called `audio.json` within this directory, using the following template for starters:
+
+```
+{
+	"id": "whateveryouwant",
+	"base": "city"
+}
+```
+
+Set the `id` property within this file to something appropriate. The `audioLoadoutId` string in `city.json` must match the `id` in `audio.json`.
 
 # Guidelines for Building a City Soundscape
 
