@@ -6,7 +6,7 @@
 	"type": "object",
 	"properties": {
 		"id" : {
-			"description": "The identifying name for this loadout, as defined in the game build.",
+			"description": "The identifying name for this loadout, as referenced by the game.",
 			"type": "string"
 		},
 		"base" : {
@@ -222,15 +222,15 @@
 					"minimum": 0
 				},
 				"Screen_PlayChords": {
-					"description": "DEPRECATED. Whether or not to play chords alongside bass notes on game over and new asset screens.",
+					"description": "DEPRECATED as of Lagos Update. Whether or not to play chords alongside bass notes on game over and new asset screens.",
 					"type": "boolean"
 				},
 				"PlayChords_GameOver": {
-					"description": "Whether or not to play chords alongside bass notes on game over and new asset screens.",
+					"description": "New in Lagos update. Whether or not to play chords alongside bass notes on game over and new asset screens.",
 					"type": "boolean"
 				},
 				"PlayChord_WeekOver": {
-					"description": "Whether or not to play chords alongside bass notes on game over and new asset screens.",
+					"description": "New in Lagos update. Whether or not to play chords alongside bass notes on game over and new asset screens.",
 					"type": "boolean"
 				},
 				"Percussion_PitchVar": {

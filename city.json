@@ -1,0 +1,336 @@
+{
+	"id": "city",
+
+	"constants":
+
+	{
+		"Rhythms"                    : [24, 18, 16, 12, 9, 8, 6, 4],
+		"LineLoop_Pulse"             : 12,
+
+		"Steps_Double"               : [0, 3, 4, 6, 8, 9],
+		"Steps_5BarTriplet"          : [0, 4, 8],
+		"Steps_DottedWhole"          : [0, 3, 6, 9],
+		"Steps_4BarTriplet"          : [0, 4, 8],
+		"Steps_Whole"                : [0, 3, 4, 6, 8, 9],
+		"Steps_DottedHalf"           : [0, 3, 6, 9],
+		"Steps_2BarTriplet"          : [0, 4, 8],
+		"Steps_Half"                 : [0, 3, 6, 9],
+		"Steps_1BarTriplet"          : [0, 4, 8],
+		"Steps_Quarter"              : [0, 3, 6, 9],
+
+		"Steps_2BarQuintuplet"       : [0],
+		"Steps_3BarQuintuplet"       : [0],
+		"Steps_4BarQuintuplet"       : [0],
+		"Steps_2BarSeptuplet"        : [0],
+		"Steps_3BarSeptuplet"        : [0],
+		"Steps_4BarSeptuplet"        : [0],
+
+		"Swing"                      : 0,
+		"Swing_Range"                : [0, 6],
+
+		"Flam_Limit"                 : 7,
+
+		"PeepEmbarks_Flam_Pulse"	 : 8,
+		"PeepEmbarks_Rhythm"         : 4,
+
+		"PeepAppears_Flam_Pulse"	 : 8,
+		"PeepAppears_Step_Standard"  : 0,
+		"PeepAppears_Step_Special"   : 4,
+
+		"TrainArrives_Rhythm"        : 2,
+
+		"ChordTone_Pulse"            : 12,
+		"Screen_PlayChords"          : true,
+
+		"Percussion_PitchVar"        : 0.2,
+
+		"VoiceLimit_FadeTime"        : 0.5,
+		"VoiceLimit_Static"          : -1,
+
+		"FadeIn_Times"               : [0.3, 0.15, 0.075, 0.00],
+
+		"Transpositions"             : [0],
+		"Octave_Chance"              : 0.0,
+
+		"Train_Engines"              : ["Scooter", "SixEight", "TwelveSixteen", "Three", "Four", "Orange"],
+        "Train_AssignEngineByLine"   : false,
+
+		"LineCreated_Gain"           : 0.15,
+		"LineLoop_Gain"              : [0.175, 0.95],
+		"StationAdded_Gain"          : 0.549,
+		"Bass_Gain"                  : 0.6,
+		"Chord_Gain"                 : 0.1,
+		"StationCountdown_Gain"      : [0.262, 0.049],
+		"PeepImpatient_Gain"         : 0.65,
+		"PeepAppears_Gain"           : 1,
+		"PeepEmbarks_Gain"           : 0.333,
+		"TrainArrives_Gain"          : [0.0072, 0.0144],
+		"TrainEngine_Gain"           : [0.15, 0.45],
+		"Gain_PerRailCar"		     : 0.075,
+		"Clock_Gain"                 : 0.262,
+
+		"MuteMetronome"              : true
+	},
+
+	"HARMONY TEMPLATE":
+	{
+		"randomize": false,
+		"assignments"	: [0, 1, 2, 2, 2, 3, 3],
+        "pedalingBass"  : true,
+		"weeks"    : [
+			{
+				"sequences"	: [
+
+					["C3", "C4"],
+					["E3" , "E4"],
+					["G3", "A3", "D4"],
+					["F4" , "G4" , "A4" , "B4"]
+				],
+
+				"bass"		: ["C", "E"],
+
+				"screens": {
+
+					"NewAsset": ["E",		"G4", "A4", "B4" ],
+					"GameOver": ["D",		"A3", "F#4", "E4"]
+				}
+			}
+		]
+	},
+
+	"modules":
+
+	[
+		{
+            "name"      : "ASSET LINE OPENED",
+			"type"      : "SimpleSound",
+			"important" : true,
+			"filter"    : {"type": "LineOpened"},
+			"sample"    : "ui_lineOpens",
+			"gain"      : 0.8
+        },
+
+		{
+			"id"     	   		: "Clock",
+			"type"       		: "Metronome",
+			"filter"     		: {"type" : "ClockEveryHour" },
+			"gain"       		: "Clock_Gain",
+			"samples"    		: ["metronome_0"]
+		},
+		{
+			"id"     	   		: "Click",
+			"type"       		: "Metronome",
+			"filter"     		: {"type" : "ClockEveryHour" },
+			"gain"       		: 0.666,
+			"mute"			    : "MuteMetronome",
+			"samples"    		: ["metronome_0"]
+		},
+
+		{
+	    	"id"   	   			: "Accompaniment",
+			"type"       		: "Accompaniment",
+			"important"         : true,
+			"filter"     		: { "type": "GameOver, NewAsset, StationSpawn, StationMutate" },
+			"ChordTone_Pulse"   : "ChordTone_Pulse",
+			"Chord_Playback"	: "Screen_PlayChords",
+			"Chord_Gain"		: "Chord_Gain",
+			"Bass_Gain"		    : "Bass_Gain"
+		},
+
+		{
+			"id"		  		: "PeepImpatient",
+			"type"      		: "PeepImpatient",
+			"filter"    		: { "type": "PeepImpatient" },
+			"Gain"	  			: "PeepImpatient_Gain",
+			"Event_Limit"		: 7,
+			"pulse"     		: 2
+		},
+		{
+			"id"		    	: "StationCountdown",
+			"type"        		: "StationCountdown",
+			"filter"      		: {"type": "StationCountdown"},
+			"samples"     		: ["metronome_0"],
+			"gainSequence"		: "StationCountdown_Gain",
+			"Fade_Length"		: 24,
+			"pulse"       		: 2
+		},
+
+
+
+		{	"id"	   			: "AssetPanelSelectLine",
+			"type"  			: "StationAdded",
+			"filter"			: { "type": "UserInterface", "uiEventType": "Click", "uiProfile": "Line" },
+			"Gain"  			: "StationAdded_Gain",
+			"pulse" 			: 0
+		},
+
+
+		{
+			"id"    			: "StationAdded",
+			"type"    			: "StationAdded",
+			"important"			: true,
+			"filter"  			: { "type": "LineChanged", "lineChangeType": "StationAdded, Created, Extended, LoopBroken, Edited" },
+			"Gain"    			: "StationAdded_Gain",
+			"pulse"   			: 0
+		},
+
+		{
+			"id"    			: "LineCreated",
+			"type"  			: "LineCreated",
+			"important"			: true,
+			"filter"			: { "type": "LineChanged"},
+			"gain"  			: "LineCreated_Gain",
+			"fadeTime"			: 1,
+			"pulse" 			: 4
+		},
+		{
+			"template"            : {
+			"type"                : "LineLoop",
+			"filter"              : { "type": "LineChanged", "lineChangeType": "StationAdded, Created, StationRemoved, Released, Mothballed" },
+			"Dynamic_Range"       : "LineLoop_Gain",
+			"Rhythms"             : "Rhythms",
+			"Swing"               : "Swing",
+			"Swing_Range"         : "Swing_Range",
+			"pulse"               : "LineLoop_Pulse",
+			"FadeIn_Times"        : "FadeIn_Times",
+
+			"Steps_Double"        : "Steps_Double",
+			"Steps_5BarTriplet"   : "Steps_5BarTriplet",
+			"Steps_4BarTriplet"	  : "Steps_4BarTriplet",
+			"Steps_DottedWhole"   : "Steps_DottedWhole",
+			"Steps_1BarTriplet"   : "Steps_1BarTriplet",
+			"Steps_Whole"         : "Steps_Whole",
+			"Steps_DottedHalf"    : "Steps_DottedHalf",
+			"Steps_2BarTriplet"   : "Steps_2BarTriplet",
+			"Steps_Half"          : "Steps_Half",
+			"Steps_Quarter"       : "Steps_Quarter",
+
+			"Steps_2BarQuintuplet": "Steps_2BarQuintuplet",
+			"Steps_3BarQuintuplet": "Steps_3BarQuintuplet",
+			"Steps_4BarQuintuplet": "Steps_4BarQuintuplet",
+			"Steps_2BarSeptuplet" : "Steps_2BarSeptuplet",
+			"Steps_3BarSeptuplet" : "Steps_3BarSeptuplet",
+			"Steps_4BarSeptuplet" : "Steps_4BarSeptuplet",
+
+			"Transpositions"      : "Transpositions",
+			"Octave_Chance"       : "Octave_Chance",
+			"VoiceLimit_FadeTime" : "VoiceLimit_FadeTime",
+			"VoiceLimit_Static"   : "VoiceLimit_Static",
+			"order"              : 0
+		},
+			"instances" 		: [
+
+			{ 			"id"	: "line0", "filter": { "lineIndex": 0 }},
+			{ 			"id"	: "line1", "filter": { "lineIndex": 1 }},
+			{ 			"id"	: "line2", "filter": { "lineIndex": 2 }},
+			{ 			"id"	: "line3", "filter": { "lineIndex": 3 }},
+			{ 			"id"	: "line4", "filter": { "lineIndex": 4 }},
+			{ 			"id"	: "line5", "filter": { "lineIndex": 5 }},
+			{ 			"id"	: "line6", "filter": { "lineIndex": 6 }}]
+		},
+
+		{
+			"template"		: {
+			"type"    		: "TrainEngine",
+			"filter"  		: { "type": "TrainDeparts" },
+			"Dynamic_Range"    	: "TrainEngine_Gain",
+			"Gain_PerRailCar"	: "Gain_PerRailCar",
+            "AssignEngineByLine": "Train_AssignEngineByLine",
+			"Engines"			: "Train_Engines",
+			"fadeTime"		: 0.9,
+			"pulse"   		: 1
+		},
+			"instances" 		: [
+
+			{ 			"id"	: "trainEngine00", "filter": { "lineIndex": 0, "trainIndex": 0 }},
+			{ 			"id"	: "trainEngine01", "filter": { "lineIndex": 0, "trainIndex": 1 }},
+			{ 			"id"	: "trainEngine02", "filter": { "lineIndex": 0, "trainIndex": 2 }},
+			{ 			"id"	: "trainEngine03", "filter": { "lineIndex": 0, "trainIndex": 3 }},
+			{ 			"id"	: "trainEngine10", "filter": { "lineIndex": 1, "trainIndex": 0 }},
+			{ 			"id"	: "trainEngine11", "filter": { "lineIndex": 1, "trainIndex": 1 }},
+			{ 			"id"	: "trainEngine12", "filter": { "lineIndex": 1, "trainIndex": 2 }},
+			{ 			"id"	: "trainEngine13", "filter": { "lineIndex": 1, "trainIndex": 3 }},
+			{ 			"id"	: "trainEngine20", "filter": { "lineIndex": 2, "trainIndex": 0 }},
+			{ 			"id"	: "trainEngine21", "filter": { "lineIndex": 2, "trainIndex": 1 }},
+			{ 			"id"	: "trainEngine22", "filter": { "lineIndex": 2, "trainIndex": 2 }},
+			{ 			"id"	: "trainEngine23", "filter": { "lineIndex": 2, "trainIndex": 3 }},
+			{ 			"id"	: "trainEngine30", "filter": { "lineIndex": 3, "trainIndex": 0 }},
+			{ 			"id"	: "trainEngine31", "filter": { "lineIndex": 3, "trainIndex": 1 }},
+			{ 			"id"	: "trainEngine32", "filter": { "lineIndex": 3, "trainIndex": 2 }},
+			{ 			"id"	: "trainEngine33", "filter": { "lineIndex": 3, "trainIndex": 3 }},
+			{ 			"id"	: "trainEngine40", "filter": { "lineIndex": 4, "trainIndex": 0 }},
+			{ 			"id"	: "trainEngine41", "filter": { "lineIndex": 4, "trainIndex": 1 }},
+			{ 			"id"	: "trainEngine42", "filter": { "lineIndex": 4, "trainIndex": 2 }},
+			{ 			"id"	: "trainEngine43", "filter": { "lineIndex": 4, "trainIndex": 3 }},
+			{ 			"id"	: "trainEngine50", "filter": { "lineIndex": 5, "trainIndex": 0 }},
+			{ 			"id"	: "trainEngine51", "filter": { "lineIndex": 5, "trainIndex": 1 }},
+			{ 			"id"	: "trainEngine52", "filter": { "lineIndex": 5, "trainIndex": 2 }},
+			{ 			"id"	: "trainEngine53", "filter": { "lineIndex": 5, "trainIndex": 3 }},
+			{ 			"id"	: "trainEngine60", "filter": { "lineIndex": 6, "trainIndex": 0 }},
+			{ 			"id"	: "trainEngine61", "filter": { "lineIndex": 6, "trainIndex": 1 }},
+			{ 			"id"	: "trainEngine62", "filter": { "lineIndex": 6, "trainIndex": 2 }},
+			{ 			"id"	: "trainEngine63", "filter": { "lineIndex": 6, "trainIndex": 3 }}]
+		},
+
+		{
+			"id"        		: "TrainArrives",
+			"type"      		: "TrainArrives",
+			"filter"    		: {"type": "TrainArrives"},
+			"Event_Limit"		: 16,
+			"Dynamic_Range"     : "TrainArrives_Gain",
+			"Gain_PerRailCar"	: "Gain_PerRailCar",
+			"Pitch"     		: 0.75,
+			"Pitch_Var"  		: 0.25,
+			"pulse"     		: "TrainArrives_Rhythm"
+		},
+
+
+
+		{
+			"template"  		: {
+				"type"      		: "Arpeggio",
+				"filter"    		: { "type": "PeepAppears" },
+				"scenario"  		: "PeepAppears",
+				"gain"    		 : "PeepAppears_Gain",
+				"prefix"    		: "PeepAppears",
+				"pitchVar"  		: "Percussion_PitchVar",
+				"Flam_Limit"		: "Flam_Limit",
+				"pulse"     		: "PeepAppears_Flam_Pulse"
+			},
+			"instances" 		: [
+
+				{ 			"id"	: "PeepAppears: Circle", 	"filter": { "peepType": "CIRCLE" 	}, "step": "PeepAppears_Step_Standard"},
+				{ 			"id"	: "PeepAppears: Square", 	"filter": { "peepType": "SQUARE" 	}, "step": "PeepAppears_Step_Standard"},
+				{ 			"id"	: "PeepAppears: Triangle",	"filter": { "peepType": "TRIANGLE" }, "step": "PeepAppears_Step_Standard"},
+				{ 			"id"	: "PeepAppears: Wedge", 		"filter": { "peepType": "WEDGE" 	}, "step": "PeepAppears_Step_Special" },
+				{ 			"id"	: "PeepAppears: Egg", 		"filter": { "peepType": "EGG" 	}, "step": "PeepAppears_Step_Special" },
+				{ 			"id"	: "PeepAppears: Diamond", 	"filter": { "peepType": "DIAMOND" 	}, "step": "PeepAppears_Step_Special" },
+				{ 			"id"	: "PeepAppears: Cross", 		"filter": { "peepType": "CROSS" 	}, "step": "PeepAppears_Step_Special" },
+				{ 			"id"	: "PeepAppears: Star", 		"filter": { "peepType": "STAR" 	}, "step": "PeepAppears_Step_Special" },
+				{ 			"id"	: "PeepAppears: Pentagon",	"filter": { "peepType": "PENTAGON" }, "step": "PeepAppears_Step_Special" },
+				{ 			"id"	: "PeepAppears: Gem", 		"filter": { "peepType": "GEM" 	}, "step": "PeepAppears_Step_Special" }]
+		},
+		{
+			"id" 	  			: "PeepEmbarks",
+			"type"      		: "Arpeggio",
+			"filter"    		: { "type": "PeepEmbarks" },
+			"scenario"  		: "PeepEmbarks",
+			"gain" 		     	: "PeepEmbarks_Gain",
+			"prefix"    		: "PeepEmbarks",
+			"Flam_Limit"		: "Flam_Limit",
+			"Rhythm"			: "PeepEmbarks_Rhythm",
+			"pulse"     		: "PeepEmbarks_Flam_Pulse"
+		},
+		{
+			"id"		  		: "PeepTransfer",
+			"type"	  			: "Arpeggio",
+			"filter"    		: { "type": "PeepArrives", "isTransfer": true },
+			"scenario"  		: "PeepTransfer",
+			"gain"		     	: "PeepAppears_Gain",
+			"prefix"    		: "PeepAppears",
+			"pitchVar"  		: "Percussion_PitchVar",
+			"Flam_Limit"		: "Flam_Limit",
+			"pulse"     		: "PeepAppears_Flam_Pulse"
+		}
+	]
+}
