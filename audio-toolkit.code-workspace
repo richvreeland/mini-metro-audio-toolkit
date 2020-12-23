@@ -12,7 +12,8 @@
 
 			{
 				"fileMatch": [
-					"*.json"
+					"examples/*.json",
+					"audio.json"
 				],
 				"url": "/schema.jsonc"
 			}
