@@ -19,11 +19,13 @@ To create a custom audio loadout for this city, create a file called `audio.json
 }
 ```
 
-Set the `id` property within this file to something appropriate. The `audioLoadoutId` string in `city.json` must match the `id` in `audio.json`.
+Set the `id` property within this file to something appropriate.
+
+The `audioLoadoutId` string in `city.json` must match the `id` in `audio.json`.
 
 # Guidelines for Building a City Soundscape
 
-Each city in Mini Metro has its own json text file which specifies how the music and sound for that city should be. All of these text files inherit from a base file. I've included an example of such a file in this repo, called `city.json`. This file contains the default settings for all cities. Any of these settings can be overridden by individual cities.
+Each city in Mini Metro has its own json text file which specifies how the music and sound for that city should be. All of these files inherit from a base file called `"city"`. I've included an example of such a file in this repo, called `city.txt`. This file contains the default settings for all cities. Any of these settings can be overridden by individual cities.
 
 ## Instruments
 It's important to first know both literally and symbolically which game objects are responsible for making the sound in Mini Metro.
