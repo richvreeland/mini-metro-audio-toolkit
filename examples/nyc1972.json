@@ -1,0 +1,85 @@
+{
+	"id": "nyc1972",
+	"base": "city",
+
+	"constants": {
+
+		"Swing"                 : 0.8,
+		"Rhythms"               : [24, 18, 4],
+
+		"PeepEmbarks_Flam_Pulse": 8,
+		"PeepEmbarks_Rhythm"    : 4,
+
+		"FadeIn_Times"          : [0,0,0,0],
+
+		"Train_Engines"	    : ["Scooter", "Orange"],
+
+		"Transpositions"	    : [1, 2]
+	},
+
+	"harmonies" : {
+
+		"assignments" : [0, 1, 2, 3, 4, 5, 6],
+		"order"	    : [0, 1, 2, 3, 4, 3, 5, 1],
+
+		"weeks" : [
+
+			{
+				"sequences"	: [["G#4"] , ["F#4"] , ["D#4"] , ["B3"] , ["A3"] , ["E3"] , ["C#3"]],
+				"bass"		:  ["E",  "A", "C#"],
+				"screens"	    : {
+
+					"GameOver": ["C", "G2", "C3", "E3", "A#3", "C4", "A#4", "D#5"]
+				}
+			},
+
+			{
+				"sequences"	: [["A4"] , ["F#4"] , ["D4"] , ["B3"] , ["G3"] , ["E3"] , ["C3"]],
+				"bass"		:  ["G",  "D#" , "C"],
+				"screens"	    : {
+
+					"GameOver": ["C", "G2", "C3", "E3", "A#3", "C4", "A#4", "D#5"]
+				}
+			},
+
+			{
+				"sequences"	: [["A4"] , ["F4"] , ["D4"] , ["A#3"] , ["G3"] , ["D#3"] , ["C3"]],
+				"bass"		:  ["A#",   "G",  "D#" , "C"],
+				"screens"	    : {
+
+					"GameOver": ["G", "G2", "D3", "F3", "B3", "D4", "F4", "A#4"]
+				}
+			},
+
+			{
+				"sequences"	: [["A4", "A3"] , ["F#4", "F#3"] , ["D4" , "D3" ] , ["B3", "B4"] , ["G3" , "G4" ] , ["E3" , "E4"] , ["C3" "C4"]],
+				"bass"		:  ["G",  "D#" , "C"],
+				"screens"	    : {
+
+					"GameOver": ["C", "G2", "C3", "E3", "A#3", "C4", "A#4", "D#5"]
+				}
+			},
+
+			{
+				"sequences"	: [["G#4" , "G#3"] , ["F#4" , "F#3"] , ["D#4" , "D#3"] , ["B3" , "B4"] , ["A3" , "A4"] , ["E3" , "E4" , "E2"] , ["C#3" , "C#4" "C#2"]],
+				"bass"		:  ["E",  "A", "C#"],
+				"screens"	    : {
+
+					"GameOver": ["C", "G2", "C3", "E3", "A#3", "C4", "A#4", "D#5"]
+				}
+			},
+
+			{
+				"sequences"	: [["A4" , "A3"] , ["F4" , "F3"] , ["D4" , "D3"] , ["A#3" , "A#2" , "A#4"] , ["G3" , "G4" , "G2" ] , ["D#3" , "D#4"] , ["C3" , "C4" , "C2"]],
+				"bass"		:  ["A#",   "G",  "D#" , "C"],
+				"screens"	    : {
+
+					"GameOver": ["G", "G2", "D3", "F3", "B3", "D4", "F4", "A#4"]
+				}
+			}
+			
+		]
+	},
+
+	"modules": []
+}

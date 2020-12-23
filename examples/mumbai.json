@@ -1,0 +1,68 @@
+{
+	"id": "mumbai",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"               : [24, 18, 12, 9],
+
+		"Steps_Double"          : [0, 6, 12],
+		"Steps_DottedWhole"     : [0, 6, 12],
+		"Steps_Whole"           : [0, 6, 12],
+		"Steps_DottedHalf"      : [0, 6, 12],
+
+		"PeepAppears_Flam_Pulse"     : 12,
+		"PeepAppears_Step_Special"   : 3,
+
+		"FadeIn_Times"          : [2.55, 2.20 , 1.55, 1.10], 
+
+		"ChordTone_Pulse"    : 8,
+
+		"PeepEmbarks_Flam_Pulse": 4,
+		"PeepEmbarks_Rhythm"    : 2,
+
+		"VoiceLimit_FadeTime"   : 1,
+		"Transpositions"        : [-1 , 0, 7],
+
+		"Train_Engines"         : ["Scooter", "SixEight", "TwelveSixteen", "Three", "Four", "Orange"],
+
+		"Bass_Gain"                  : 1
+	},
+
+	"harmonies": {
+
+		"assignments"	: [0, 0, 1, 2, 2, 3],
+		"order"		: [0, 0, 1, 2, 1],
+
+		"weeks"	: [
+
+			{	"sequences"	: [ ["D2" , "D3" ] , ["D2", "A2" ,"D3", "A2"] , ["A3", "F3" ,"A3", "C4" , "G3" , "B3"] , ["D4", "A4", "B4", "G4", "C4", "F4", "A3"]],
+				"bass"		:  ["D"],
+				"screens"		: {
+
+					"NewAsset": ["D",		"A3", "D3", "A4" , "B4", "D4" ],
+					"GameOver": ["C",	"C3", "G3" , "C4", "E4", "A5", "F#5", "B5"]
+
+				}
+			},
+			{	"sequences"	: [ ["D2" , "D3" ] , ["D2", "A2" ,"D3", "C3" , "F#3"] , ["C3", "F#3" ,"A3", "C4" , "G3" , "B3"] , ["D4", "A4", "B4", "G4", "C4", "F#4", "A3"]],
+				"bass"		:  ["D"],
+				"screens"		: {
+
+					"NewAsset": ["D",		"A3", "D3", "A4" , "B4", "D4" ],
+					"GameOver": ["C",	"C3", "G3" , "C4", "E4", "A5", "F#5", "B5"]
+				}
+			},
+			{   "sequences"	: [ ["D2" , "D3" ] , ["A3" ,"D3", "C#3" , "F#3"] , ["A3", "F#3" ,"A3", "C#4" , "G#3" , "B3"] , ["D4", "A4", "B4", "G#4", "C#4", "F#4", "A3"]],
+				"bass"		:  ["D"],
+				"screens"		: {
+
+					"NewAsset": ["D",		"A3", "D3", "A4" , "B4", "D4" ],
+					"GameOver": ["C",	"C3", "G3" , "C4", "E4", "A5", "F#5", "B5"]
+				}
+			}
+		]
+	},
+
+	"modules": []
+}

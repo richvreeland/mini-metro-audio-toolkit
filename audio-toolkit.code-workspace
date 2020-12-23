@@ -12,7 +12,7 @@
 
 			{
 				"fileMatch": [
-					"/Cities/*.txt"
+					"*.json"
 				],
 				"url": "/schema.jsonc"
 			}

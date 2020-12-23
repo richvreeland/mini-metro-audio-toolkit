@@ -1,0 +1,59 @@
+{
+    "id": "chicago",
+    "base": "city",
+
+    "constants": {
+
+        "Rhythms"               : [12, 9, 8],
+
+        "Steps_DottedWhole"     : [0, 6],
+        "Steps_Whole"           : [0, 4, 6, 8],
+        "Steps_Half"            : [0, 6],
+        "Steps_1BarTriplet"     : [0, 4, 8],
+
+        "PeepAppears_Flam_Pulse"     : 4,
+        "PeepAppears_Step_Standard"  : 0,
+        "PeepAppears_Step_Special"   : 2,
+
+        "PeepEmbarks_Flam_Pulse": 4,
+        "PeepEmbarks_Rhythm"    : 2,
+
+        "VoiceLimit_FadeTime"   : 0,
+        "Transpositions"        : [-2, -1, 0, 1, 2],
+
+        "Train_Engines"         : ["Scooter", "Three", "Four", "Orange"]
+    },
+
+    "harmonies": {
+
+        "assignments"   : [0, 0, 0, 1, 1, 2, 2, 3],
+
+        "weeks" : [
+
+            {   "sequences" : [["E3", "G#3", "C#4", "A3",  "F#4", "B4", "E5"],   ["C#3", "E4", "C#4"]],
+                "bass"      :  ["E",  "A",  "D",  "E",   "A",  "D",  "D",  "A",   "E",  "F#",  "A",   "A",  "E",  "F#",  "F#"],
+                "screens"       : {
+
+                    "GameOver": ["E",   "E3", "A3", "C#4", "E4", "A4", "C#4", "C#5"]
+                }
+            },
+            {   "sequences" : [["D3", "F#3", "A4", "C#4",  "A4", "E3", "D4"], ["D3", "A4", "F#4"]],
+                "bass"      :  ["D",  "F#",  "A",  "C#",   "A",  "D",  "E",  "A",   "F#",  "D",  "F#",   "D",  "F#",  "A",  "C#"],
+                "screens"       : {
+
+                    "GameOver": ["F#",   "A3", "C#3", "E4", "D4", "F#4", "A4", "C#5"]
+                }
+            },
+            {   "sequences" : [["A3", "C#4", "E4", "D3",  "F#3"],   ["A4", "C#4", "D4"]],
+                "bass"      :  ["A",  "D",  "A",  "F#",   "A",  "C#",  "D"],
+                "screens"       : {
+
+                    "GameOver": ["D",   "A3", "F#3", "E4"]
+                }
+            }
+
+        ]
+    },
+
+    "modules": []
+}

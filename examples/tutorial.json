@@ -1,0 +1,72 @@
+{
+	"id": "tutorial",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"           : [24, 18, 12, 6, 12, 6],
+
+		"Steps_Double"      : [0, 6],
+		"Steps_DottedWhole" : [0, 6],
+		"Steps_Whole"       : [0, 6],
+		"Steps_Half"        : [0, 6],
+
+		"ChordTone_Pulse": 12,
+
+		"Train_Engines"     : ["Scooter", "Orange", "Three", "Four"],
+
+		"Transpositions"	: [-7, -6, -5, -4, -3, -2, -1, 0]
+	},
+
+	"harmonies" : {
+
+		"assignments"	: [0, 0, 0, 0, 0, 1, 1],
+		"order"		: [0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+
+		"weeks" : [
+
+			{
+				"sequences"	:[["C5", "C4", "E4", "F4", "G4"],
+							  ["A3", "G3"]],
+				"bass"		: ["G", "C", "D", "F", "A"],
+				"screens"		: {
+					"GameOver": ["A",	"C3", "E3", "G3", "B3", "C4", "E4", "G4"]
+				}
+			},
+
+			{
+				"sequences"   :[["A#3", "D4", "F4", "A4", "C5"],
+							 ["A3", "G3"]],
+				"bass"	    : ["A#" , "D" , "C" , "F",  "D#" , "G"],
+				"screens"		: {
+					"GameOver": ["D",	"D3", "F3", "A3", "C4", "D4", "E4", "G4"]
+				}
+			}
+		]
+	},
+
+	"_harmonies" : {
+
+		"assignments" : [0, 0, 0, 0, 1, 1, 1],
+
+		"weeks" : [
+
+			{
+				"sequences"	:[["C3", "E3", "G2", "B3", "D3", "A3", "G3"],
+							  ["E4", "D4", "B4", "D5", "A4", "G4", "C4"]],
+				"bass"		: ["C" , "G" , "G" , "F",  "D" , "A" , "C" ],
+				"screens"		: {
+					"GameOver": ["A",	"C3", "E3", "G3", "B3", "C4", "E4", "G4"]
+				}
+			},
+
+			{
+				"sequences"   :[["C3", "E3", "F3", "A3", "C4", "G3", "D4"],
+							 ["E4", "A4", "D4", "C5", "D5", "G4", "B4"]],
+				"bass"	    : ["F" , "G" , "F" , "D",  "A" , "C" , "F" ]
+			}
+		]
+	},
+
+	"modules": []
+}

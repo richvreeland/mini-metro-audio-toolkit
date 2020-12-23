@@ -1,0 +1,73 @@
+{
+	"id": "stockholm",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"               : [24, 24, 12, 6, 3, 4],
+
+		"PeepAppears_Flam_Pulse"	 : 4,
+
+		"PeepEmbarks_Flam_Pulse"	: 6,
+		"PeepEmbarks_Rhythm"    	: 3,
+		"PeepAppears_Step_Special"  : 1,
+
+		"Percussion_PitchVar"        : 0.5,
+
+
+		"VoiceLimit_FadeTime"   : 0.75,
+		"VoiceLimit_Static"     : 3,
+
+		"Transpositions"        : [6, 8],
+		"FadeIn_Times"          : [0.15, 0.3, 0.75, 0.5],
+
+		"Train_Engines"         : ["SixEight" , "Three"]
+	},
+
+	"harmonies": {
+
+		"assignments"	: [0, 1, 2, 3, 4, 5, 6],
+		"order" : [0, 0, 1],
+
+		"weeks"	: [
+
+			{	"sequences"	: [["C2"], ["C3" , "G3"] , ["G3" , "D3"], ["F3" ,"F3", "G3" ,"G3"] , ["D#3" , "F3" , "D#3"], ["A#4" , "G#4" , "G4"] ,["C5", "D4", "D#4"]],
+				"bass"		:  ["C",  "C", "F",  "A#",  "G#"],
+				"screens"		: {
+
+					"GameOver": ["D",	"D3", "A4", "F4", "G4", "A4", "C4", "D5"]
+				}
+			},
+			{	"sequences"	: [["F2"], ["F3" , "C3"] , ["C3", "F4" , "G3"], [ "B3" , "B3" , "C3" , "C3" ], ["A3" , "B3"  ], ["D#4" , "D4" , "C4"] ,["F5", "G4", "D4"]],
+				"bass"		:  ["F"],
+				"screens"		: {
+
+					"GameOver": ["D",	"D3", "A4", "F4", "G4", "A4", "C4", "D5"]
+				}
+			}
+
+		]
+	},
+
+	"modules": [
+	{
+			"type"      		: "Beat",
+			"filter"    		: { "type": "CityStart" },
+			"Rhythms"			: [36, 36, 36, 18, 18],
+			"Rhythms_Double"	: [48, 36, 72],
+			"StartingWeekIndex"	: 1,
+			"gain"				: 0.6,
+			"pulse"     		: 12
+		},
+		{ 			"id"	: "PeepAppears: Circle", 	 "step": 2 },
+		{ 			"id"	: "PeepAppears: Square", 	 "step": 3 },
+		{ 			"id"	: "PeepAppears: Triangle",	 "step": 4 },
+		{ 			"id"	: "PeepAppears: Wedge", 		 "step": 1 },
+		{ 			"id"	: "PeepAppears: Egg", 		 "step": 5 },
+		{ 			"id"	: "PeepAppears: Diamond", 	 "step": 1 },
+		{ 			"id"	: "PeepAppears: Cross", 		 "step": 5 },
+		{ 			"id"	: "PeepAppears: Star", 		 "step": 1 },
+		{ 			"id"	: "PeepAppears: Pentagon",	 "step": 5 },
+		{ 			"id"	: "PeepAppears: Gem", 		 "step": 1 }
+		]
+}

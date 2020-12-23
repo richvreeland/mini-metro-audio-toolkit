@@ -1,0 +1,86 @@
+{
+	"id": "lagos",
+	"base": "city",
+
+	"constants": {
+
+		"LineLoop_Pulse": 12,
+		"Rhythms": [4, 9],
+		"Steps_DottedHalf": [0, 4, 8],
+		"Steps_1BarTriplet": [0, 3, 6, 9],
+
+		"Swing": 0.25,
+		"Swing_Range": [0, 9],
+
+		"PlayChords_GameOver": true,
+		"ChordTone_Pulse": 9,
+
+		"Percussion_PitchVar": 0.25,
+
+		"Train_Engines": ["Scooter", "Scooter", "Scooter", "Orange", "Three", "Orange", "Three"],
+		"Train_AssignEngineByLine": true,
+		"TrainArrives_Rhythm": 3,
+
+		"Transpositions": [-1,0,1,2,3,4,5],
+
+		"FadeIn_Times": [0.5, 0.0, 0.5, 0.0],
+		"VoiceLimit_FadeTime": 0,
+		
+		"Flam_Limit": 12,
+		"PeepAppears_Flam_Pulse": 12,
+		"PeepAppears_Step_Special": 6,
+		"PeepAppears_Step_Standard": 8,
+		"PeepEmbarks_Flam_Pulse": 12,
+		"PeepEmbarks_Rhythm": 6
+	},
+	"harmonies": {
+		"assignments": [0, 0, 0, 0, 1, 0, 1],
+		"order": [0, 0, 1, 1, 2, 2],
+		"pedalingBass": true,
+		"weeks": [
+			{
+				"sequences": [
+					["C#2", "G#2", "A#2", "D#3", "C#3"],
+					["F3", "C4", "G#3", "D#4", "A#3"]
+				],
+				"bass": ["C#", "A#", "D#", "F#"],
+				"screens": {
+					"GameOver" : ["C#", "C#3", "D#3", "G#3", "A#3", "C#4", "F4"]
+				}
+			},
+			{
+				"sequences": [
+					["D#2", "A#2", "C#3", "G#3", "D#3"],
+					["F3", "C#4", "A#3", "F4", "C4"]
+				],
+				"bass": ["D#", "F#", "G#"],
+				"screens": {
+					"GameOver" : ["D#", "D#3", "A#3", "C#4", "G#4", "D#4", "F4"]
+				}
+			},
+			{
+				"sequences": [
+					["C2", "D3", "F2", "A#2", "C3"],
+					["G3", "D4", "A#3", "F4", "C4"]
+				],
+				"bass": ["C", "D#", "F", "A#"],
+				"screens": {
+					"GameOver" : ["C", "C3", "D4", "F3", "A#3", "C4", "G4"]
+				}
+			}
+		]
+	},
+
+	"modules": [
+		{
+			"type": "Beat",
+			"filter": { "type": "CityStart" },
+			"Rhythms": [8, 16, 18, 20],
+			"Rhythms_Double": [16, 32, 36, 40],
+			"StartingWeekIndex": 2,
+			"FadeInLength": 12,
+			"gain": 1.0,
+			"pulse": 12
+		}
+	]
+}

@@ -1,0 +1,50 @@
+{
+	"id": "nyc",
+	"base": "city",
+
+	"constants": {
+
+		"Swing"                 : 0.5,
+		"Rhythms"               : [24, 18, 12, 6, 4],
+
+		"PeepEmbarks_Flam_Pulse": 8,
+		"PeepEmbarks_Rhythm"    : 4,
+
+		"FadeIn_Times"          : [0,0,0,0],
+
+		"Train_Engines"	    : ["Three", "Four", "Scooter", "Orange"],
+
+		"Transpositions"	    : [0, 1, 2, 3]
+	},
+
+	"harmonies" : {
+
+		"assignments" : [0, 0, 0, 0, 1, 1, 1],
+		"order"	    : [0, 0, 0, 1, 1],
+
+		"weeks" : [
+
+			{
+				"sequences"   :[["C3", "E3", "G2",  "A#3", "D3", "A3", "G3"],
+							 ["E4", "G3", "A#4", "D4",  "A4", "G4", "C4"]],
+				"bass"	    : ["C" , "G" , "G"  , "F",   "D" , "A" , "C" ],
+				"screens"	    : {
+
+					"GameOver": ["G", "G2", "D3", "F3", "B3", "D4", "F4", "A#4"]
+				}
+			},
+
+			{
+				"sequences"   :[["C3", "F3", "A3",  "D#3", "C4",  "G3",  "A#3"],
+							 ["D4", "G4", "C5",  "F4",  "C#4", "D#4", "A#4"]],
+				"bass"	    : ["F" , "C" , "D#",  "D#",   "C" , "F" ,  "C" ],
+				"screens"	    : {
+
+					"GameOver": ["C", "G2", "C3", "E3", "A#3", "C4", "A#4", "D#5"]
+				}
+			}
+		]
+	},
+
+	"modules": []
+}

@@ -1,0 +1,99 @@
+{
+	"id": "barcelona",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"               : [24, 18, 12, 6, 12, 9, 6],
+
+		"Steps_Double"          : [0, 3, 6, 9],
+		"Steps_DottedWhole"     : [0, 3, 6, 9],
+		"Steps_Whole"           : [0, 3, 6, 9],
+		"Steps_DottedHalf"      : [0, 3, 6, 9],
+		"Steps_Half"            : [0, 3, 6, 9],
+
+		"PeepAppears_Flam_Pulse"	: 4,
+		"PeepAppears_Step_Standard"  : 0,
+		"PeepAppears_Step_Special"   : 2,
+
+		"PeepEmbarks_Flam_Pulse": 4,
+		"PeepEmbarks_Rhythm"    : 2,
+
+		"VoiceLimit_FadeTime"   : 0,
+		"Transpositions"        : [-4, -2, 0, 3],
+
+		"Train_AssignEngineByLine" : true,
+		"Train_Engines"            : ["Shinkansen", "Scooter", "Three", "Orange", "Four", "Orange", "Scooter"]
+	},
+
+	"harmonies" : {
+
+		"assignments" : [0, 0, 0, 0, 1, 1, 1],
+		"pedalingBass" : false,
+
+		"weeks"	: [
+
+			{	"sequences"	: [["C3", "G3", "D4", "E4", "F#4", "A3"], ["F#4", "A3", "G4", "B3", "A4", "D2", "B4", "D4"]],
+
+				"bass"		:  ["C", "C", "G", "A", "C", "D", "C"],
+				"screens"		: {
+
+					"GameOver": ["A", "C3", "E3", "B3", "D4", "F#4", "A4", "E5"]
+				}
+			},
+
+
+			{	"sequences"	: [["C3", "F#3", "D4", "E4", "F#4", "G4" "A3"], ["E4", "A3", "G4", "B3", "A4", "D2", "B4", "D4"]],
+
+				"bass"		:  ["D", , "E", "F#", "G"],
+				"screens"		: {
+
+					"GameOver": ["A", "C3", "E3", "B3", "D4", "F#4", "A4", "E5"]
+				}
+
+			},
+
+
+			{	"sequences"	: [["E3", "B3", "D4", "E4", "F#4", "F#3"], ["A4", "C4", "G4", "B3", "F#3"]],
+				"bass"		:  ["A",  "G",  "B",  "F#",   "A",  "E",  "G",  "D"],
+				"screens"		: {
+
+					"GameOver": ["A", "C3", "E3", "B3", "D4", "F#4", "A4", "E5"]
+				}
+			},
+
+
+			{	"sequences"	: [["D#3", "F#3", "B3", "C#4", "F#4", "A#3"], ["A#4", "F#4", "B3", "C#4", "A#3"]],
+				"bass"		:  ["D#",  "B", "G#", "C#"],
+				"screens"		: {
+
+					"GameOver": ["A", "C3", "E3", "B3", "D4", "F#4", "A4", "E5"]
+				}
+			},
+
+
+			{	"sequences"	: [["D3", "A3", "B3", "C#4", "F#4"], ["D4", "F#4", "B3", "C#4", "A3"]],
+				"bass"		:  ["D",  "A", "B", "C#"],
+				"screens"		: {
+
+					"GameOver": ["A", "C3", "E3", "B3", "D4", "F#4", "A4", "E5"]
+				}
+			}
+
+
+		]
+	},
+
+
+	"modules": [
+		{
+				"type"      		: "Beat",
+				"filter"    		: { "type": "CityStart" },
+				"Rhythms"			: [12, 9, 8, 6, 8, 9],
+				"Rhythms_Double"	: [24, 18, 12, 18],
+				"StartingWeekIndex"	: 1,
+				"gain"			    : 1,
+				"pulse"     		: 12
+		}
+	]
+}

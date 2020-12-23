@@ -1,0 +1,71 @@
+{
+	"id": "saopaulo",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"          : [12, 11, 10, 9, 8, 7, 6, 5, 4],
+
+		"Steps_Whole"      : [0],
+		"Steps_DottedHalf" : [0],
+		"Steps_2BarTriplet": [0],
+		"Steps_Half"       : [0],
+		"Steps_1BarTriplet": [0],
+
+		"FadeIn_Times"     : [0.75, 0.50, 0.33, 0.25],
+		"Octave_Chance"    : 0.25,
+
+		"Train_Engines"    : ["Scooter", "Orange"],
+
+		"Transpositions"   : [-1, 0, 1],
+
+		"PeepEmbarks_Flam_Pulse"	    : 6,
+		"PeepEmbarks_Rhythm"         : 4,
+
+		"PeepAppears_Flam_Pulse"	    : 4,
+
+		"TrainArrives_Rhythm"         : 12
+	},
+
+	"harmonies" : {
+
+		"assignments" : [0, 0, 0, 0, 0, 0],
+		"order"	    : [0, 0, 0, 1],
+
+		"weeks" : [
+
+			{
+				"sequences"	: [["D3", "A3", "C4", "D4", "F4", "A4", "G4"]],
+				"bass"		: ["D", 	"G",  "F",  "A",  "A#", "C"],
+
+				"screens"		: {
+					"GameOver": ["G",	"D3", "F3", "G3", "C4", "D4", "G4"]
+				}
+			},
+
+			{
+
+				"sequences"	: [["D#3", "A#3", "C4", "D4", "G4", "A#4", "A4"]],
+				"bass"		: ["D#",   "A#",  "C",  "G",  "D#", "G",   "F"],
+
+				"screens"		: {
+					"GameOver": ["G",	"D3", "F3", "G3", "C4", "D4", "G4"]
+				}
+			}
+		]
+	},
+
+	"modules": [
+
+		{ 	"id"	: "PeepAppears: Circle", 	"step": 0},
+		{ 	"id"	: "PeepAppears: Square", 	"step": 1},
+		{ 	"id"	: "PeepAppears: Triangle",	"step": 2},
+		{ 	"id"	: "PeepAppears: Wedge", 		"step": 3},
+		{ 	"id"	: "PeepAppears: Egg", 		"step": 3},
+		{ 	"id"	: "PeepAppears: Diamond", 	"step": 3},
+		{ 	"id"	: "PeepAppears: Cross", 		"step": 3},
+		{ 	"id"	: "PeepAppears: Star", 		"step": 3},
+		{ 	"id"	: "PeepAppears: Pentagon",	"step": 3},
+		{ 	"id"	: "PeepAppears: Gem", 		"step": 3}
+	]
+}

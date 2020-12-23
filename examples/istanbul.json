@@ -1,0 +1,51 @@
+{
+	"id": "istanbul",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"               : [24, 12, 6],
+
+		"Steps_Double"          : [0, 9, 12],
+		"Steps_Whole"           : [0, 9, 12],
+		"Steps_Half"            : [0, 9, 12],
+
+		"PeepAppears_Flam_Pulse"	 : 5,
+		"PeepAppears_Step_Special"   : 2,
+
+		"FadeIn_Times"          : [1.5, 1, 0.75, 0.50], 
+
+		"PeepEmbarks_Flam_Pulse": 4,
+		"PeepEmbarks_Rhythm"    : 2,
+
+		"Transpositions"        : [-8 ],
+
+		"Train_Engines"         : ["Four", "Orange"]
+	},
+
+	"harmonies": {
+
+		"assignments"	: [0, 0, 0, 0, 1, 1, 1],
+
+		"weeks"	: [
+
+			{	"sequences"	: [["C3", "E3","G3", "G#3",  "B3", "G4", "C4", "E4",  "C#4", "C3", "E3",  "C4", "E4", "G4", "B4"],	["B3", "C4", "G#4", "E4"]],
+				"bass"		:  ["C"],
+				"screens"		: {
+
+					"GameOver": ["F",	"F3", "C3" , "F4", "A4", "D5", "B5", "E5"]
+				}
+			},
+			{	"sequences"	: [["E3", "G3", "B3", "D3",  "E3", "G4", "B4", "E4",  "D4", "B3", "G3",  "E4", "G4", "B4", "D5"],	["C3", "A4", "C4"]],
+				"bass"		:  ["G"],
+				"screens"		: {
+
+					"GameOver": ["F",	"F3", "C3" , "F4", "A4", "D5", "B5", "E5"]
+				}
+			}
+
+		]
+	},
+
+	"modules": []
+}

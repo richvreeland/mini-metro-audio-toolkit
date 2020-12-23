@@ -1,0 +1,57 @@
+{
+	"id": "hongkong",
+	"base": "city",
+
+	"constants": {
+
+		"Swing"                 : 0.5,
+		"Swing_Range"           : [6, 24],
+
+		"Rhythms"               : [4, 6, 8, 12],
+
+		"Steps_Whole"           : [0, 3, 4, 6, 8, 9],
+		"Steps_2BarTriplet"     : [0, 4, 8],
+		"Steps_Half"            : [0, 3, 6, 9],
+		"Steps_1BarTriplet"     : [0, 4, 8],
+
+		"PeepEmbarks_Flam_Pulse": 8,
+		"PeepEmbarks_Rhythm"    : 4,
+
+		"FadeIn_Times"          : [0.5, 0, 0.25, 0],
+
+		"Transpositions"	    : [-5, -4, -3, -2, -1, 0]
+	},
+
+	"harmonies": {
+
+		"assignments"	: [0, 0, 0, 0, 1, 1, 1],
+		"order"		: [0, 0, 0, 0, 1, 1],
+
+		"weeks"	: [
+
+			{
+				"sequences"	: [	["F3",  "A#3", "C3", "F4", "G3", "D#3", "A#3", "C#4", "F#3", "D#4", "F4", "C4"],
+								["A#4", "C5", "F5"]],
+				"bass"		: 	["F",   "A#", "F",   "G#", "D#", "F#",  "G#",  "F#",  "G#",  "F",   "D",  "C"],
+
+				"screens": {
+
+					"GameOver": ["F",		"F3", "G3", "C4", "F4", "G4", "A#4", "C5"]
+				}
+			},
+
+			{
+				"sequences"	: [	["G3",  "A3", "D4", "F#4"],
+								["C#5", "A4", "E4", "C#4", "B3"]],
+				"bass"		: 	["G",   "A",  "B",  "D"],
+
+				"screens": {
+
+					"GameOver": ["F",		"F3", "G3", "C4", "F4", "G4", "A#4", "C5"]
+				}
+			}
+		]
+	},
+
+	"modules": []
+}

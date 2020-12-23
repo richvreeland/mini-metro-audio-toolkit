@@ -1,0 +1,122 @@
+{
+	"id": "paris1937",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"                  : [840, 420, 315, 280, 210, 168, 140, 120],
+		"LineLoop_Pulse"           : 420,
+
+		"Steps_Double"             : [0, 60, 70, 84, 105, 120, 140, 168, 210, 252, 280, 315, 336, 350, 360],
+		"Steps_Whole"              : [0, 60, 70, 84, 105, 120, 140, 168, 210, 252, 280, 315, 336, 350, 360],
+		"Steps_DottedHalf"         : [0, 105, 210, 315],
+		"Steps_2BarTriplet"        : [0, 140, 280],
+		"Steps_Half"               : [0, 70, 105, 210, 280],
+		"Steps_2BarQuintuplet"     : [0, 84, 168],
+		"Steps_1BarTriplet"        : [0, 70, 140, 210, 280, 350],
+		"Steps_2BarSeptuplet"      : [0, 60, 120, 180, 240, 300, 360],
+
+		"PeepEmbarks_Flam_Pulse"   : 14,
+		"PeepEmbarks_Rhythm"       : 4,
+
+		"FadeIn_Times"             : [0.1, 0.05, 0.025, 0.00],
+
+		"ChordTone_Pulse"       : 7,
+		"PlayChords_WeekOver"           : false,
+
+		"Transpositions"           : [0, 1, 2],
+
+		"Flam_Limit"               : 6,
+		"PeepAppears_Flam_Pulse"   : 10,
+		"PeepAppears_Step_Standard": 0,
+		"PeepAppears_Step_Special" : 5,
+
+		"TrainArrives_Rhythm"       : 5,
+
+		"_Percussion_PitchVar"     : 0.2,
+		"_VoiceLimit_FadeTime"     : 0.5,
+		"_VoiceLimit_Static"       : -1,
+		"_Octave_Chance"           : 0.0,
+		"Train_Engines"           : ["SixEight", "TwelveSixteen"]
+	},
+
+	"harmonies":
+	{
+		"assignments"	: [0, 1, 2, 3, 4, 5, 6],
+		"order"	    : [0, 1, 2, 3, 4, 5, 6, 0, 5, 1, 4, 2, 3],
+		"weeks"    : [
+
+			{
+				"sequences"	: [["A4"] , ["A4"] , ["A4"] , ["A3"] , ["A3"] , ["A3"] , ["A5"]],
+				"bass"		:  ["A" , "A" , "F"],
+
+				"screens": {
+
+					"GameOver": ["G#",		"D#3", "G#3", "B3", "D#4", "F4", "G#4", "B4"]
+				}
+			},
+
+			{
+				"sequences"	: [["A4"] , ["F4"] , ["A4"] , ["F4"] , ["A4"] , ["F4"] , ["A3"]],
+				"bass"		:  ["A" , "F"],
+
+				"screens": {
+
+					"GameOver": ["G#",		"D#3", "G#3", "B3", "D#4", "F4", "G#4", "B4"]
+				}
+			},
+
+			{
+				"sequences"	: [["A4"] , ["F4"] , ["D4"] , ["A4"] , ["F4"] , ["D4"] , ["A3"]],
+				"bass"		:  ["F",  "D"],
+
+				"screens": {
+
+					"GameOver": ["G#",		"D#3", "G#3", "B3", "D#4", "F4", "G#4", "B4"]
+				}
+			},
+
+			{
+				"sequences"	: [["A4"] , ["F4"] , ["D4"] , ["A#3"] , ["A4"] , ["F3"] , ["D3"]],
+				"bass"		:  ["F",  "D",  "A#"],
+
+				"screens": {
+
+					"GameOver": ["G#",		"D#3", "G#3", "B3", "D#4", "F4", "G#4", "B4"]
+				}
+			},
+
+			{
+				"sequences"	: [["A4"] , ["F4"] , ["D4"] , ["A#3"] , ["G3"] , ["A3"] , ["F3"]],
+				"bass"		:  ["F",  "D",  "A#", "G"],
+
+				"screens": {
+
+					"GameOver": ["G#",		"D#3", "G#3", "B3", "D#4", "F4", "G#4", "B4"]
+				}
+			},
+
+			{
+				"sequences"	: [["A4"] , ["F4"] , ["D4"] , ["A#3"] , ["G3"] , ["D#3"] , ["A5"]],
+				"bass"		:  ["F",  "D",  "A#",   "G",  "D#"],
+
+				"screens": {
+
+					"GameOver": ["G#",		"D#3", "G#3", "B3", "D#4", "F4", "G#4", "B4"]
+				}
+			},
+
+			{
+				"sequences"	: [["A4" , "A4" , "A3"] , ["F4" , "F4" , "F3" ] , ["D4" , "D3"] , ["A#3" , "A#4"] , ["G3" , "G2" , "G4"] , ["D#3"] , ["C3"]],
+				"bass"		:  ["F",  "D",  "A#",   "G",  "D#" , "C"],
+
+				"screens": {
+
+					"GameOver": ["G#",		"D#3", "G#3", "B3", "D#4", "F4", "G#4", "B4"]
+				}
+			}
+		]
+	},
+
+	"modules": []
+}

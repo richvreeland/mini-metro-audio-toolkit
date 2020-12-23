@@ -1,0 +1,47 @@
+{
+	"id": "canberra",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"               : [8, 12, 16, 28, 56],
+		"LineLoop_Pulse"        : 28,
+
+		"Steps_2BarSeptuplet"   : [0, 8, 16, 24],
+		"Steps_3BarSeptuplet"   : [0, 12, 24],
+		"Steps_4BarSeptuplet"   : [0, 16],
+		"Steps_Whole"           : [0, 4, 7, 8, 12, 14, 16, 20, 21, 24],
+		"Steps_Double"          : [0, 4, 7, 8, 12, 14, 16, 20, 21, 24],
+
+		"PeepEmbarks_Flam_Pulse": 28,
+		"PeepEmbarks_Rhythm"    : 16,
+
+		"FadeIn_Times"          : [1, 0.75, 0.5, 0.25],
+		"Train_Engines"         : ["Scooter", "Orange"],
+
+		"Transpositions"        : [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7]
+	},
+
+	"harmonies" : {
+
+		"assignments" : [0, 0, 0, 0, 0, 0, 0],
+
+		"weeks" : [
+
+			{
+				"sequences"   :[["C3", "D4", "G3", "B3", "A3", "A4", "B4"]],
+				"bass"	    : ["C"]
+			},
+			{
+				"sequences"   :[["C3", "D4", "G3", "B3", "A3", "A4", "G4"]],
+				"bass"	    : ["C"]
+			},
+			{
+				"sequences"   :[["C3", "D4", "G3", "B3", "A3", "A4", "E4"]],
+				"bass"	    : ["C"]
+			}
+		]
+	},
+
+	"modules": []
+}

@@ -1,0 +1,53 @@
+{
+	"id": "london",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"               : [24, 18, 12, 6, 12, 9, 6],
+
+		"Steps_Double"          : [0, 3, 6, 9],
+		"Steps_DottedWhole"     : [0, 3, 6, 9],
+		"Steps_Whole"           : [0, 3, 6, 9],
+		"Steps_DottedHalf"      : [0, 3, 6, 9],
+		"Steps_Half"            : [0, 3, 6, 9],
+
+		"PeepAppears_Flam_Pulse"	    : 4,
+		"PeepAppears_Step_Standard"  : 0,
+		"PeepAppears_Step_Special"   : 2,
+
+		"PeepEmbarks_Flam_Pulse": 4,
+		"PeepEmbarks_Rhythm"    : 2,
+
+		"VoiceLimit_FadeTime"   : 0,
+		"Transpositions"        : [-2, -1, 0, 1, 2],
+
+		"Train_Engines"         : ["Scooter", "Three", "Four", "Orange"]
+	},
+
+	"harmonies": {
+
+		"assignments"	: [0, 0, 0, 0, 1, 1, 1],
+
+		"weeks"	: [
+
+			{	"sequences"	: [["C3", "E3", "G2", "B3",  "C4", "E4", "G4", "B4",  "B3", "G3", "E3",  "C4", "E4", "G4", "B4"],	["A3", "D4", "A4"]],
+				"bass"		:  ["C",  "E",  "G",  "A",   "F",  "C",  "E",  "G",   "E",  "C",  "E",   "C",  "E",  "G",  "B"],
+				"screens"		: {
+
+					"GameOver": ["A",	"G3", "A3", "C4", "E4", "F4", "A4", "C5"]
+				}
+			},
+			{	"sequences"	: [["E3", "G3", "B2", "D4",  "E4", "G4", "B4", "D5",  "D4", "B3", "G3",  "E4", "G4", "B4", "D5"],	["C3", "A4", "C4"]],
+				"bass"		:  ["E",  "G",  "B",  "C",   "A",  "E",  "G",  "B",   "G",  "E",  "G",   "E",  "G",  "B",  "D"],
+				"screens"		: {
+
+					"GameOver": ["A",	"G3", "A3", "C4", "E4", "F4", "A4", "C5"]
+				}
+			}
+
+		]
+	},
+
+	"modules": []
+}

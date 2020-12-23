@@ -1,0 +1,88 @@
+{
+	"id": "melbourne",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"                    : [24, 18, 12, 6, 4],
+		"LineLoop_Pulse"             : 12,
+
+		"Steps_Double"               : [0, 4, 6, 8],
+		"Steps_DottedWhole"          : [0, 6],
+		"Steps_Whole"                : [0, 4, 6, 8],
+		"Steps_Half"                 : [0, 6],
+		"Steps_1BarTriplet"          : [0, 4, 8],
+
+		"Percussion_PitchVar"        : 0.2,
+
+		"VoiceLimit_FadeTime"        : 1.0,
+
+		"Flam_Limit"                 : 5,
+
+		"PeepEmbarks_Flam_Pulse"	    : 6,
+		"PeepEmbarks_Rhythm"         : 3,
+
+		"PeepAppears_Flam_Pulse"	    : 6,
+		"PeepAppears_Step_Standard"  : 0,
+		"PeepAppears_Step_Special"   : 3,
+
+		"FadeIn_Times"               : [0.9, 0.0, 0.6, 0.3],
+
+		"Transpositions"             : [-3, -2, -1, 0, 1, 2, 3, 4, 5],
+
+		"Train_Engines"              : ["Orange"]
+	},
+
+	"harmonies": {
+
+		"assignments"	: [0, 1, 0, 1, 0, 1],
+		"order"		: [0, 0, 1, 1, 2, 2],
+
+		"weeks"	: [
+
+			{
+				"sequences"	: [
+
+					["C3", "E3", "G3"],
+					["C4", "G4", "D5", "A4", "E4"]
+				],
+				"bass"		: ["A", "G", "C", "G"],
+
+				"screens" : {
+
+					"GameOver" : ["C", "A3", "E4", "G4", "A4", "B4"]
+				}
+			},
+
+			{
+				"sequences"	: [
+
+					["D3", "F3", "A3"],
+					["C4", "G4", "D5", "A4", "E4"]
+				],
+				"bass"		: ["G", "F", "D", "F"],
+
+				"screens" : {
+
+					"GameOver" : ["C", "A3", "E4", "G4", "A4", "B4"]
+				}
+			},
+
+			{
+				"sequences"	: [
+
+					["A2", "C#3", "E3"],
+					["A3", "E4", "B4", "G#4", "C#4"]
+				],
+				"bass"		: ["A", "G", "C", "G"],
+
+				"screens" : {
+
+					"GameOver" : ["C", "A3", "E4", "G4", "A4", "B4"]
+				}
+			}
+		]
+	},
+
+	"modules": []
+}

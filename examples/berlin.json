@@ -1,0 +1,90 @@
+{
+	"id": "berlin",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"               : [24, 20, 18, 16, 12, 9, 8, 6, 4],
+
+		"ChordTone_Pulse"    : 9,
+		"PlayChords_WeekOver"   : false,
+		"Percussion_PitchVar"   : 0.1,
+
+		"VoiceLimit_FadeTime"   : 0,
+		"VoiceLimit_Static"     : 1,
+
+		"PeepEmbarks_Flam_Pulse": 9,
+		"PeepEmbarks_Rhythm"    : 6,
+
+		"Transpositions"        : [0, 1, 2, 3, 4],
+
+		"PeepAppears_Flam_Pulse": 4,
+
+		"Train_Engines"         : ["Scooter", "Orange"]
+	},
+
+	"harmonies": {
+
+		"assignments"	: [0, 0, 0, 0, 1, 1, 1],
+
+		"weeks"    : [
+
+			{
+				"sequences"	:[["D2", "F2", "G2", "A2"],
+							  ["C3", "D3", "G3", "A3"]],
+				"bass"		: ["D", "F", "G", "A", "C"],
+
+				"screens": {
+
+					"GameOver": ["D",	"A2", "C3", "G3"]
+				}
+			},
+
+			{
+				"sequences"	:[["D3", "F3", "G3", "A3"],
+							  ["C4", "D4", "G4", "A4"]],
+				"bass"		: ["D", "F", "G", "A", "C"],
+
+				"screens": {
+
+					"GameOver": ["D",	"A2", "C3", "G3"]
+				}
+			},
+
+			{
+				"sequences"	:[["A2", "C3", "D3", "E3"],
+							  ["G3", "A3", "D4", "E4"]],
+				"bass"		: ["A", "C", "D", "E", "G"],
+
+				"screens": {
+
+					"GameOver": ["D",	"A2", "C3", "G3"]
+				}
+			}
+		]
+	},
+
+	"modules": [
+
+		{
+			"type"      		: "Beat",
+			"filter"    		: { "type": "CityStart" },
+			"Rhythms"			: [12, 9, 8, 6, 8, 9],
+			"Rhythms_Double"	: [24, 18, 12, 18],
+			"StartingWeekIndex"	: 1,
+			"gain"			    : 1,
+			"pulse"     		: 12
+		},
+
+		{ 			"id"	: "PeepAppears: Circle", 	 "step": 0 },
+		{ 			"id"	: "PeepAppears: Square", 	 "step": 0 },
+		{ 			"id"	: "PeepAppears: Triangle",	 "step": 2 },
+		{ 			"id"	: "PeepAppears: Wedge", 		 "step": 1 },
+		{ 			"id"	: "PeepAppears: Egg", 		 "step": 3 },
+		{ 			"id"	: "PeepAppears: Diamond", 	 "step": 1 },
+		{ 			"id"	: "PeepAppears: Cross", 		 "step": 3 },
+		{ 			"id"	: "PeepAppears: Star", 		 "step": 1 },
+		{ 			"id"	: "PeepAppears: Pentagon",	 "step": 3 },
+		{ 			"id"	: "PeepAppears: Gem", 		 "step": 1 }
+	]
+}

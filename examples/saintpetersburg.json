@@ -1,0 +1,52 @@
+{
+	"id": "saintpetersburg",
+	"base": "city",
+
+	"constants": {
+
+		"Swing"                 : 0.333,
+		"Swing_Range"           : [0, 6],
+
+		"Rhythms"               : [24, 12, 6],
+
+		"Steps_Double"          : [0, 8],
+		"Steps_Whole"           : [0, 8],
+		"Steps_Half"            : [0],
+
+		"PeepEmbarks_Flam_Pulse": 8,
+		"PeepEmbarks_Rhythm"    : 4,
+
+		"FadeIn_Times"          : [0,0,0,0],
+
+		"VoiceLimit_Static"     : 5,
+
+		"Transpositions"        : [-6, -4, -2, -1, 0, 1],
+
+		"ChordTone_Pulse"    : 6,
+
+		"PeepAppears_Flam_Pulse": 6,
+		"Flam_Limit"            : 7
+	},
+
+	"harmonies": {
+
+		"assignments"	: [0, 0, 0, 0, 1],
+
+		"weeks"	: [
+
+			{
+				"sequences"	: [	["F#4", "A4", "C#5", "C#4"],
+								["E4", "A3", "D#4", "F#3"]],
+				"bass"		: 	["C#",  "F#", "A",  "B", "A", "F#"]
+			},
+			{
+				"sequences"	: [	["F#4", "G#4", "C#5", "C#4"],
+								["E4", "G#3", "A#3", "C#3"]],
+				"bass"		:	["C", "G#", "A#", "E"]
+			}
+
+		]
+	},
+
+	"modules": []
+}

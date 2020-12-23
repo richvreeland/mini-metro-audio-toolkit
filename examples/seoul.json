@@ -1,0 +1,71 @@
+{
+	"id": "seoul",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"          : [12, 9, 8, 6, 4],
+
+		"Steps_Whole"      : [0],
+		"Steps_DottedHalf" : [3],
+		"Steps_2BarTriplet": [4],
+		"Steps_Half"       : [6],
+		"Steps_1BarTriplet": [9],
+
+		"FadeIn_Times"     : [0.75, 0.25, 0.33, 0.15],
+
+		"Train_Engines"    : ["Orange"],
+
+		"Transpositions"   : [-2],
+
+		"PeepEmbarks_Flam_Pulse"	 : 6,
+		"PeepEmbarks_Rhythm"         : 4,
+
+		"TrainArrives_Rhythm"         : 10,
+
+		"ChordTone_Pulse"   		 : 12,
+
+		"PlayChords_GameOver"             : true
+
+	},
+
+	"harmonies" : {
+
+		"assignments" : [0, 0, 0, 0, 0, 1, 1], 
+		"order"	    : [0, 0, 1, 2], 
+
+		"weeks" : [
+
+			{
+				"sequences"	: [["A#3", "D3", "G3", "A3", "F3", "D4", "G3"], ["E4" , "C4" , "A#4"]],
+				"bass"		: ["A#", "G",  "C",  "D",  "G", "F"],
+
+				"screens"		: {
+					"GameOver": ["C", "D#4", "F4", "G4", "A#4", "D4"]
+				}
+			},
+
+			{
+
+				"sequences"	: [["D#3", "G3", "C3", "D4", "A#3", "G3", "C4"], ["D#4" , "C4" , "A#4"]],
+				"bass"		: ["D#", "C",  "F",  "G",  "C", "A#"],
+
+				"screens"		: {
+					"GameOver": ["C", "D#4", "F4", "G4", "A#4", "D4"]
+				}
+			},
+
+			{
+
+				"sequences"	: [["C#3", "F3", "A#3", "C3", "G#3", "F3", "A#4"], ["E4" , "C4" , "A#4"]],
+				"bass"		: ["C#", "A#",  "D#",  "F",  "A#", "G#"],
+
+				"screens"		: {
+					"GameOver": ["C", "D#4", "F4", "G4", "A#4", "D4"]
+				}
+			}
+		]
+	},
+
+	"modules": []
+}

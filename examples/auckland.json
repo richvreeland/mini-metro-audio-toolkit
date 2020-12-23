@@ -1,0 +1,82 @@
+{
+	"id": "auckland",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"               : [12],
+
+		"Steps_Whole"           : [0, 3, 6, 9],
+
+		"ChordTone_Pulse"    : 4,
+		"TrainArrives_Rhythm"    : 4,
+
+		"PeepEmbarks_Flam_Pulse": 8,
+		"PeepEmbarks_Rhythm"    : 4,
+
+		"Train_Engines"         : ["Scooter", "Three", "Four"],
+
+		"Transpositions"	    : [-3, -2, -1, 0, 1, 2, 3]
+		},
+
+	"harmonies":
+	{
+		"assignments": [0, 0, 0, 0, 1, 1, 1],
+
+		"weeks" : [
+
+			{
+				"sequences"	:[["E3", "G3", "A3", "D4"],
+							  ["A4", "D5","G4"]],
+				"bass"		: ["E", "A"],
+
+				"screens": {
+
+					"GameOver": ["A",		"A2", "E3", "B3", "A3", "C4", "E4", "B5"]
+				}
+			},
+			{
+				"sequences"	:[["D3", "G3", "A3", "E4"],
+							  ["A4", "D5","G4"]],
+				"bass"		: ["D"],
+
+				"screens": {
+
+					"GameOver": ["A",		"A2", "E3", "B3", "A3", "C4", "E4", "B5"]
+				}
+			},
+			{
+				"sequences"	:[["C3", "G3", "A3", "F#4"],
+							  ["A4", "D5","G4"]],
+				"bass"		: ["C"],
+
+				"screens": {
+
+					"GameOver": ["A",		"A2", "E3", "B3", "A3", "C4", "E4", "B5"]
+				}
+			},
+			{
+				"sequences"	:[["F2", "G3", "A3", "G4"],
+							  ["A4", "D5", "E5"]],
+				"bass"		: ["F"],
+
+				"screens": {
+
+					"GameOver": ["A",		"A2", "E3", "B3", "A3", "C4", "E4", "B5"]
+				}
+			},
+			{
+				"sequences"	:[["G2", "A3", "B3", "A4"],
+							  ["B4", "D5", "E5"]],
+				"bass"		: ["G"],
+
+				"screens": {
+
+					"GameOver": ["A",		"A2", "E3", "B3", "A3", "C4", "E4", "B5"]
+				}
+			}
+		]
+	},
+
+	"modules": []
+}

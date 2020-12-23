@@ -1,0 +1,54 @@
+{
+	"id": "osaka",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"               : [20, 18, 16, 12, 8, 6, 4],
+
+		"Steps_DottedWhole"     : [0, 6],
+		"Steps_Whole"           : [0, 4, 6, 8],
+		"Steps_Half"            : [0, 6],
+		"Steps_1BarTriplet"     : [0, 4, 8],
+
+		"PeepEmbarks_Flam_Pulse": 12,
+		"PeepEmbarks_Rhythm"    : 4,
+
+		"PeepAppears_Flam_Pulse": 6,
+		"ChordTone_Pulse"    : 6,
+
+		"Transpositions"	    : [-2, -1, 0, 1, 2]
+	},
+
+	"harmonies" : {
+
+		"assignments" : [0, 0, 0, 0, 0, 0],
+
+		"weeks" : [
+
+			{
+				"sequences"   : [[	"C3", "D3", "G3", "B3", "D4", "E4", "F#4","A3", "A4", "C#4","F#3","D3", "B3", "E4", "A3", "A4", "F#3","C#4", "D4", "E3", "B3", "E4", "F#4","B4"]],
+				"bass"	    : [   "C" , "E" , "A" , "F#", "B",  "D" , "D"  ,"D" , "F#", "E"  ,"B"  ,"G" , "F#" ,"B" , "E" , "B" , "A" , "G"  , "E" , "D" , "G" , "A" , "G"  ,"D"  ],
+
+				"screens": {
+
+					"GameOver": ["G",	"D3", "G3", "A#3", "D4", "F4", "G4", "A#4"]
+				}
+			}
+		]
+	},
+
+	"modules": [
+
+		{ "id": "PeepAppears: Circle",	"step": 0 },
+		{ "id": "PeepAppears: Square",	"step": 0 },
+		{ "id": "PeepAppears: Triangle", 	"step": 0 },
+		{ "id": "PeepAppears: Wedge", 	"step": 2 },
+		{ "id": "PeepAppears: Egg", 	 	"step": 2 },
+		{ "id": "PeepAppears: Pentagon", 	"step": 2 },
+		{ "id": "PeepAppears: Cross", 	"step": 2 },
+		{ "id": "PeepAppears: Diamond",  	"step": 4 },
+		{ "id": "PeepAppears: Star",		"step": 4 },
+		{ "id": "PeepAppears: Gem", 	 	"step": 4 }
+	]
+}

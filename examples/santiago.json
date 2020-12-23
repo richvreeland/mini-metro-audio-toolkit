@@ -1,0 +1,144 @@
+{
+	"id": "santiago",
+	"base": "city",
+	"constants": {
+		"Octave_Chance": 0.1,
+		"Swing": 0.75,
+		"Swing_Range": [0, 4],
+		"FadeIn_Times": [0, 0, 0, 0],
+		"VoiceLimit_FadeTime": 0.66,
+		"VoiceLimit_Static": 1,
+		"Train_Engines": ["Scooter", "SixEight", "TwelveSixteen", "Three", "Four", "Orange", "Shinkansen"],
+		"Train_AssignEngineByLine": true
+	},
+	"harmonies": {
+		"assignments": [0, 1, 6, 2, 3, 4, 5],
+		"randomize": true,
+		"weeks": [
+			{
+				"bass": ["C"],
+				"sequences": [
+					["C2"],
+					["C2"],
+					["C2"],
+					["C2"],
+					["C2"],
+					["C2"],
+					["F4", "D4", "D#3", "G3", "A#3", "D#4", "D4"]
+				],
+				"screens": {
+					"NewAsset": ["C", "C3", "G3", "D4", "A#4"],
+					"GameOver": ["G", "G2", "D3", "B3", "D4", "E4", "G4"]
+				}
+			},
+			{
+				"bass": ["C", "G"],
+				"sequences": [
+					["C2"],
+					["G2"],
+					["C2"],
+					["G2"],
+					["C2"],
+					["D5", "D#4", "G3", "A#3", "D#4", "D4", "F4"],
+					["G2"]
+				],
+				"screens": {
+					"NewAsset": ["C", "C3", "G3", "D4", "A#4"],
+					"GameOver": ["G", "G2", "D3", "B3", "D4", "E4", "G4"]
+				}
+			},
+			{
+				"bass": ["C", "A#", "D#"],
+				"sequences": [
+					["C2"],
+					["A#2"],
+					["D#3"],
+					["C2"],
+					["D#4", "G3", "A#3", "D#4", "D4", "F4", "D5"],
+					["A#2"],
+					["D#3"]
+				],
+				"screens": {
+					"NewAsset": ["C", "C3", "G3", "D4", "A#4"],
+					"GameOver": ["G", "G2", "D3", "B3", "D4", "E4", "G4"]
+				}
+			},
+			{
+				"bass": ["C", "A#", "D#", "F"],
+				"sequences": [
+					["C2"],
+					["A#2"],
+					["D#3"],
+					["G3", "A#3", "D#4", "D4", "F4", "D5", "D#4"],
+					["F3"],
+					["C2"],
+					["A#2"]
+				],
+				"screens": {
+					"NewAsset": ["C", "C3", "G3", "D4", "A#4"],
+					"GameOver": ["G", "G2", "D3", "B3", "D4", "E4", "G4"]
+				}
+			},
+			{
+				"bass": ["C", "D#", "G"],
+				"sequences": [
+					["C3"],
+					["D#3"],
+					["G4", "A#4", "D#4", "D4", "F4", "D5", "D#4"],
+					["G3"],
+					["C4"],
+					["D4"],
+					["D#4"]
+				],
+				"screens": {
+					"NewAsset": ["C", "C3", "G3", "D4", "A#4"],
+					"GameOver": ["G", "G2", "D3", "B3", "D4", "E4", "G4"]
+				}
+			},
+			{
+				"bass": ["F"],
+				"sequences": [
+					["F3"],
+					["G5", "A#4", "D#5", "D5", "F4", "D5", "D#5"],
+					["C4"],
+					["A4"],
+					["D4"],
+					["D#4"],
+					["G4"]
+				],
+				"screens": {
+					"NewAsset": ["F", "F3", "C4", "A4", "D4", "G4"],
+					"GameOver": ["G", "G2", "D3", "B3", "D4", "E4", "G4"]
+				}
+			},
+			{
+				"bass": ["C"],
+				"sequences": [
+					["A#3", "D#4", "D4", "F4", "D4", "D#3", "G3"],
+					["C2"],
+					["C2"],
+					["C2"],
+					["C#2"],
+					["C2"],
+					["A2"]
+				],
+				"screens": {
+					"NewAsset": ["C", "C3", "G3", "D4", "A#4"],
+					"GameOver": ["G", "G2", "D3", "B3", "D4", "E4", "G4"]
+				}
+			}
+		]
+	},
+	"modules": [
+		{
+			"type": "Beat",
+			"filter": { "type": "CityStart" },
+			"Rhythms": [6, 10],
+			"Rhythms_Double": [24, 40],
+			"StartingWeekIndex": 0,
+			"FadeInLength": 100,
+			"gain": 1.0,
+			"pulse": 12
+		}
+	]
+}

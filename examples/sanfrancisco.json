@@ -1,0 +1,70 @@
+{
+	"id": "sanfrancisco",
+	"base": "city",
+
+	"constants": {
+
+		"Swing"                 : 0.15,
+		"Swing_Range"           : [0, 4],
+
+		"Rhythms"               : [3, 4, 9, 12],
+
+		"Steps_Whole"           : [0],
+		"Steps_1BarTriplet"     : [0, 4, 8],
+		"Steps_DottedHalf"      : [0, 3, 6, 9],
+		"Steps_Quarter"         : [0, 3, 6, 7, 9, 10],
+
+		"PeepEmbarks_Flam_Pulse": 6,
+		"PeepEmbarks_Rhythm"    : 3,
+
+		"FadeIn_Times"          : [0.55, 0.20 , 0.25, 0.10],
+
+		"Transpositions"	    : [-5,-3,-2,0],
+
+		"Train_Engines"    		: ["SixEight", "Scooter"],
+
+		"PlayChords_GameOver"        : true
+	},
+
+	"harmonies": {
+
+		"assignments"	: [0, 0, 0, 0, 0, 0, 0],
+		"order"		: [0, 1, 2],
+
+		"weeks"	: [
+
+			{
+				"sequences"	: [["A4",  "F4", "D4", "A#3", "G3", "D#3", "C3", "F3"]],
+
+				"bass"		: 	["D" , "A#" , "G" , "D#", "C", "F", "C" , "A"],
+
+				"screens": {
+
+					"GameOver": ["C",	"C3", "G3", "C4", "D#4", "F4", "A4", "D5"]
+				}
+			},
+
+			{
+				"sequences"	: [	["A4", "F4", "C4", "A#3", "G3", "F3", "D3" , "G3"]],
+
+				"bass"		: 	["F",  "C",  "A#",  "G", "F" , "G" , "A#" , "D"],
+
+				"screens": {
+
+					"GameOver": ["C",	"C3", "G3", "C4", "D#4", "F4", "A4", "D5"]
+				}
+			},
+
+			{
+				"sequences"	: [	["D#5","C5", "A4", "F4", "D4", "C4", "G3" , "D#3"]],
+
+				"bass"		: 	["A",  "F",  "D",  "C", "G", "C" , "D#", "G"],
+
+				"screens": {
+
+					"GameOver": ["C",	"C3", "G3", "C4", "D#4", "F4", "A4", "D5"]
+				}
+			}
+		]
+	}
+}

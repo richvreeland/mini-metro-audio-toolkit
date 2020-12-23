@@ -1,0 +1,51 @@
+{
+	"id"       : "cairo",
+	"base"     : "city",
+
+	"constants": {
+
+		"Rhythms"               :[24, 18, 12, 6],
+		"Swing_Range"           :[0, 24],
+		"Swing"                 : 0.75,
+
+		"PeepEmbarks_Flam_Pulse": 8,
+		"PeepEmbarks_Rhythm"    : 4,
+
+		"FadeIn_Times"          :[1.25, 1, 0.75, 0.5],
+
+		"Transpositions"	    :[-3, -2, -1, 0, 1]
+	},
+
+	"harmonies": {
+
+		"assignments"	: [0, 0, 0, 0, 1, 1],
+		"order"		: [0, 0, 1, 1],
+
+		"weeks"	: [
+
+			{
+				"sequences"	:[	["G4", "F4",  "C4",  "A#4", "D#4", "G#4", "F#4", "C#4", "B4", "D#4", "A#4", "D#5"],
+							  	["G3", "A#3", "D#3", "G#3", "B3",  "F#3", "C#3", "B3", "D#3", "A#3", "G3",  "C3"]],
+				"bass"		:[ "G#", "D#",  "F#",   "E" , "B"  , "C#" , "G#"  , "G" ,  "F" , "C#" , "C",  "A#"],
+
+				"screens": {
+
+					"GameOver": ["F",		"F3", "G3", "C4", "F4", "G4", "C5", "A#4"]
+				}
+			},
+
+			{
+				"sequences"	:[["A4", "G4",  "D4",  "C5", "F4",  "A#4", "G#4", "D#4", "C#5", "F4", "C5", "F5"],
+							  ["A3", "C4",  "F3", "A#3", "C#4", "G#3", "D#3", "C#4", "F3",  "C4", "A3", "D3"]],
+				"bass"		:[ "A#", "F",   "G#",  "F#", "C#" , "D#" , "A#" , "A" ,  "G" ,  "D#", "D",  "C"],
+
+				"screens": {
+
+					"GameOver": ["F",		"F3", "G3", "C4", "F4", "G4", "C5", "A#4"]
+				}
+			}
+		]
+	},
+
+	"modules": []
+}

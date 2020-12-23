@@ -1,0 +1,72 @@
+{
+	"id": "paris",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"                  : [840, 420, 315, 280, 210, 168, 140, 120],
+		"LineLoop_Pulse"           : 420,
+
+		"Steps_Double"             : [0, 60, 70, 84, 105, 120, 140, 168, 210, 252, 280, 315, 336, 350, 360],
+		"Steps_Whole"              : [0, 60, 70, 84, 105, 120, 140, 168, 210, 252, 280, 315, 336, 350, 360],
+		"Steps_DottedHalf"         : [0, 105, 210, 315],
+		"Steps_2BarTriplet"        : [0, 140, 280],
+		"Steps_Half"               : [0, 70, 105, 210, 280],
+		"Steps_2BarQuintuplet"     : [0, 84, 168],
+		"Steps_1BarTriplet"        : [0, 70, 140, 210, 280, 350],
+		"Steps_2BarSeptuplet"      : [0, 60, 120, 180, 240, 300, 360],
+
+		"PeepEmbarks_Flam_Pulse"   : 14,
+		"PeepEmbarks_Rhythm"       : 4,
+
+		"FadeIn_Times"             : [0.1, 0.05, 0.025, 0.00],
+
+		"ChordTone_Pulse"       : 7,
+		"PlayChords_WeekOver"           : false,
+
+		"Transpositions"           : [-2, -1, 0, 1, 2, 3, 4],
+
+		"Flam_Limit"               : 6,
+		"PeepAppears_Flam_Pulse"   : 10,
+		"PeepAppears_Step_Standard": 0,
+		"PeepAppears_Step_Special" : 5,
+
+		"TrainArrives_Rhythm"       : 5,
+
+		"Percussion_PitchVar"     : 0.2,
+		"VoiceLimit_FadeTime"     : 0.5,
+		"Octave_Chance"           : 0.0,
+		"Train_Engines"           : ["SixEight", "TwelveSixteen", "Three", "Four"]
+	},
+
+	"harmonies":
+	{
+		"assignments"	: [0, 0, 0, 0, 0, 0, 1],
+		"weeks"    : [
+
+			{
+				"sequences"	:[["B2", "D#3", "G#3", "B3", "F4", "G#4", "D#4", "C#3", "G#3", "F3", "B3", "C#4", "G#4"],
+							  ["A#4", "D#5"]],
+				"bass"		: ["B",  "D#",  "G#",  "B",  "F",  "G#",  "D#",  "C#",  "G#",  "F#", "B",  "C#",  "G#"],
+
+				"screens": {
+
+					"GameOver": ["G#",		"D#3", "G#3", "B3", "D#4", "F4", "G#4", "B4"]
+				}
+			},
+
+			{
+				"sequences"	:[["C3",  "D#3", "A#3", "C4",  "F4", "G#4", "D4", "D3", "G#3", "F3", "C4",  "F4", "G#4"],
+							  ["D#5", "A#4", "C5",  "A#4", "C5", "D5",  "C5", "G4", "D#4", "C5", "A#4", "C5", "A#4"]],
+				"bass"		: ["D#",  "G#",  "A#",  "F",   "D",  "A#",  "F",  "A#",  "C",  "F",   "C",  "F",  "D#"],
+
+				"screens": {
+
+					"GameOver": ["G#",		"D#3", "G#3", "B3", "D#4", "F4", "G#4", "B4"]
+				}
+			}
+		]
+	},
+
+	"modules": []
+}

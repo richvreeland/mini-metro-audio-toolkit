@@ -1,0 +1,77 @@
+{
+	"id": "montreal",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"               : [20, 15, 12, 9, 6, 5],
+		"LineLoop_Pulse"        : 15,
+
+		"Steps_4BarTriplet"     : [0, 5, 10],
+		"Steps_Whole"           : [0, 3, 5, 6, 9, 10, 12],
+		"Steps_4BarQuintuplet"  : [0, 3, 6, 9, 12],
+		"Steps_3BarQuintuplet"  : [0, 3, 6, 9, 12],
+		"Steps_2BarQuintuplet"  : [0, 3, 6, 9, 12],
+		"Steps_1BarTriplet"     : [0, 5, 10],
+
+		"PeepEmbarks_Flam_Pulse": 15,
+		"PeepEmbarks_Rhythm"    : 9,
+
+		"FadeIn_Times"          : [0,0,0,0],
+
+		"Transpositions"	    : [0, 1, 2, 3]
+	},
+
+	"harmonies": {
+
+		"assignments"	: [0, 0, 0, 0, 1, 1, 1],
+
+		"weeks"	: [
+
+			{
+				"sequences"	: [
+
+					["D3", "A3", "C4", "E4"],
+					["F4", "A4", "G4"]
+				],
+				"bass"		: ["D"],
+
+				"screens" : {
+
+					"GameOver" : ["A", "A2", "E3", "G3", "B3", "D4", "G4", "A4"]
+				}
+			},
+
+			{
+				"sequences"	: [
+
+					["F3", "A3", "B3", "D4"],
+					["F4", "B4", "D5", "A4"]
+				],
+				"bass"		: ["A", "G", "F"],
+
+				"screens" : {
+
+					"GameOver" : ["A", "A2", "E3", "G3", "B3", "D4", "G4", "A4"]
+				}
+			},
+
+			{
+
+				"sequences"	: [
+
+					["D3", "F3", "G3", "C4"],
+					["E4", "F4", "A4", "G4"]
+				],
+				"bass"		: ["A#", "G"],
+
+				"screens" : {
+
+					"GameOver" : ["A", "A2", "E3", "G3", "B3", "D4", "G4", "A4"]
+				}
+			}
+		]
+	},
+
+	"modules": []
+}
