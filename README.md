@@ -1,5 +1,7 @@
 # Mini Metro Audio Toolkit
 
+[YouTube Walkthrough](https://www.youtube.com/watch?v=-AXe3l16BJo)
+
 This toolkit contains a guide, and a VSCode setup for working on Audio Loadout .json files for Mini Metro. If you use a different code editor, the JSON Schema file may still come in handy for setting up error linting/etc. in the environment of your choice.
 
 For VSCode, simply put the .jsonc and .code-workspace files into the same directory where you're working (ie. a custom map's directory).
