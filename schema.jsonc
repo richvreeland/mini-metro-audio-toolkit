@@ -17,6 +17,16 @@
 			"description": "An object full of general and important, but entirely optional parameters.",
 			"type": "object",
 			"properties": {
+				"LineLoop_EmptyStations_Mute": {
+					"description": "Whether or not empty stations don't trigger any LineLoop notes.",
+					"type":"boolean",
+					"enum": [true]
+				},
+				"LineLoop_EmptyStations_DuckPrev": {
+					"description": "Whether or not to duck previous LineLoop note when reaching an empty station in a LineLoop sequence. Requires LineLoop_EmptyStations_Mute to be true.",
+					"type":"boolean",
+					"enum": [true]
+				},
 				"MuteMetronome": {
 					"description": "Whether or not to mute the metronome. When unmuted, the ticking clock is always on and serves as the metronome, for testing purposes. Editor will yell at you when this is set to false.",
 					"type":"boolean",

@@ -1,0 +1,65 @@
+{
+	"author": "Max Duggan",
+	"id": "budapest",
+	"base": "city",
+
+	"constants": {
+
+        "Rhythms" : [12, 9, 8],
+		"pulse"   : 12,
+
+		"Steps_DottedWhole"     : [0, 6],
+		"Steps_Whole"           : [0, 4, 6, 8],
+		"Steps_Half"            : [0, 6],
+		"Steps_1BarTriplet"     : [0, 4, 8],
+
+		"PeepAppears_Flam_Pulse"	    : 4,
+		"PeepAppears_Step_Standard"  : 0,
+		"PeepAppears_Step_Special"   : 2,
+
+		"PeepEmbarks_Flam_Pulse": 4,
+		"PeepEmbarks_Rhythm"    : 2,
+		"FadeIn_Times" : [1.00, 1.5, 0.5, 1.0],
+
+		"VoiceLimit_FadeTime"   : 0,
+		"Transpositions"        : [-2, -1, 0, 1, 2],
+
+		"FadeInLength" : 10,
+
+
+		"Train_Engines"         : ["Scooter", "Three", "Four", "Orange"]
+	},
+
+	"harmonies": {
+
+		"assignments"	: [0, 0, 0, 0, 1, 1, 2],
+
+		"weeks"	: [
+
+			{	"sequences"	: [["B3", "F#4", "C#5", "A#4",  "C#4", "F#4", "G#5", "B4"],	["B3", "C#4", "B4"]],
+				"bass"		:  ["B",  "B",  "F#",  "C#",   "F#",  "A#",  "B"],
+				"screens"		: {
+
+					"GameOver": ["B",	"F#3", "C#5", "A#4", "C#4", "F#4", "A#4", "F#5"]
+				}
+			},
+			{	"sequences"	: [["F#3", "A#3", "C#3", "F#4", "A#4", "C#5"],	["F#3", "A#4", "C#4"]],
+				"bass"		:  ["F#",  "C#",  "F#",  "C#",   "A#",  "C#",  "F#",  "F#"],
+				"screens"		: {
+
+					"GameOver": ["F#",	"A#3", "C#3", "F4", "F#4", "A#4", "C#5"]
+				}
+			},
+			{	"sequences"	: [["F5", "C#4", "G#4", "F#4", "C#4"],	["F#3", "A#4", "C#4"]],
+				"bass"		:  ["F#",  "C#",  "G#",  "G#",   "C#",  "C#",  "F#",  "F#"],
+				"screens"		: {
+
+					"GameOver": ["B",	"B3", "D#4", "F#4", "A#4", "C#4", "F#5"]
+				}
+			}
+
+		]
+	},
+
+	"modules": []
+}

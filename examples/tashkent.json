@@ -1,0 +1,94 @@
+{
+	"id": "tashkent",
+	"base": "city",
+
+	"constants": {
+
+		"Rhythms"               : [20, 18, 16, 12, 8, 6, 4],
+
+		"ChordTone_Pulse"    : 4,
+		"Chord_Playback"        : false,
+
+		"Steps_DottedWhole"     : [0, 6],
+		"Steps_Whole"           : [0, 4],
+		"Steps_Half"            : [0, 6],
+		"Steps_1BarTriplet"     : [0, 4, 8, 12],
+
+
+		"PeepEmbarks_Flam_Pulse": 4,
+		"PeepEmbarks_Rhythm"    : 6,
+
+		"Transpositions"        : [0, 1, 2, 3, 4],
+
+		"PeepAppears_Flam_Pulse": 2,
+
+		"FadeInLength" : 1.0,
+
+		"Train_Engines"         : ["Scooter", "Three", "Four", "Orange"]
+	},
+
+	"harmonies": {
+
+		"assignments"	: [0, 0, 0, 0, 1, 1],
+
+		"weeks"    : [
+
+			{
+				"sequences"	:[["G3", "F#3", "B3", "D4"],
+							  ["B3", "D3", "F#3"]],
+				"bass"		: ["G", "B", "G", "B", "F#"],
+
+				"screens": {
+
+					"GameOver": ["G",	"G2", "B3", "D4", "F#4"]
+				}
+			},
+
+			{
+				"sequences"	:[["B3", "D3", "F#3", "A4"],
+							  ["D3", "F#3", "A4", "F#4"]],
+				"bass"		: ["B", "B", "G", "G"],
+
+				"screens": {
+
+					"GameOver": ["B",   "B3", "D3", "F#3", "A4", "G5", "F#4"]
+				}
+			},
+
+			{
+				"sequences"	:[["C2", "E3", "G3", "B3"],
+							  ["B3", "D3", "F#4", "A4"]],
+				"bass"		: ["C", "G", "C", "B", "G"],
+
+				"screens": {
+
+					"GameOver": ["C",	"C2", "E3", "G3", "B3", "F#3", "A4"]
+				}
+			}
+		]
+	},
+
+	"modules": [
+
+		{
+			"type"      		: "Beat",
+			"filter"    		: { "type": "CityStart" },
+			"Rhythms"			: [8, 6, 4, 3, 2],
+     		"Rhythms_Double"    : [16, 12, 8, 6, 4],
+			"StartingWeekIndex"	: 1,
+			"gain"			    : 1,
+			"pulse"     		: 12
+		},
+
+		{ 			"id"	: "PeepAppears: Circle", 	 "step": 1 },
+		{ 			"id"	: "PeepAppears: Square", 	 "step": 0 },
+		{ 			"id"	: "PeepAppears: Triangle",	 "step": 2 },
+		{ 			"id"	: "PeepAppears: Wedge", 		 "step": 3 },
+		{ 			"id"	: "PeepAppears: Egg", 		 "step": 3 },
+		{ 			"id"	: "PeepAppears: Diamond", 	 "step": 2 },
+		{ 			"id"	: "PeepAppears: Cross", 		 "step": 3 },
+		{ 			"id"	: "PeepAppears: Star", 		 "step": 2 },
+		{ 			"id"	: "PeepAppears: Pentagon",	 "step": 3 },
+		{ 			"id"	: "PeepAppears: Gem", 		 "step": 1 }
+	]
+}

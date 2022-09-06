@@ -1,0 +1,57 @@
+{
+    "author": "Max Duggan",
+    "id": "chongqing",
+    "base": "city",
+
+    "constants": {
+
+
+        "Rhythms"               : [20, 18, 16, 12, 8, 6, 4],
+
+        "Steps_DottedWhole"     : [0, 6],
+        "Steps_Whole"           : [0, 4, 6, 8],
+        "Steps_Half"            : [0, 6],
+        "Steps_1BarTriplet"     : [0, 4, 8],
+        "Swing_Range"           :[0, 12],
+        "Swing"                 : 0.25,
+        "FadeIn_Times"          : [0.25,0,0.25,0],
+
+        "PeepAppears_Flam_Pulse"        : 4,
+        "PeepAppears_Step_Standard"  : 0,
+        "PeepAppears_Step_Special"   : 2,
+
+        "PeepEmbarks_Flam_Pulse": 4,
+        "PeepEmbarks_Rhythm"    : 2,
+
+        "VoiceLimit_FadeTime"   : 0,
+        "Transpositions"        : [-3, -2, -1, 0],
+
+        "Train_Engines"         : ["Scooter", "Three", "Four", "Orange"]
+    },
+
+    "harmonies": { 
+
+        "assignments"   : [0, 0, 0, 0, 1, 1, 1],
+
+        "weeks" : [
+
+            {   "sequences" : [["C4", "C5", "E4", "G3",  "D4", "A4"],   ["C3", "G4", "A4"]],
+                "bass"      :  ["C",  "D",  "E",  "C",   "D",  "E",  "E",  "G",   "E",  "C",  "E",   "C",  "E",  "G",  "B"],
+                "screens"       : {
+
+                    "GameOver": ["C",   "C3", "G3", "A3", "D4", "B5"]
+                }
+            },
+            {   "sequences" : [["A5", "G5", "C5", "G4",  "C4"], ["C3", "A4", "G4"]],
+                "bass"      :  ["A",  "C",  "G",  "A",   "D"],
+                "screens"       : {
+
+                    "GameOver": ["A",   "A3", "C3", "E4", "G4"]
+                }
+            }
+
+        ]
+    },
+
+    "modules": []
+}

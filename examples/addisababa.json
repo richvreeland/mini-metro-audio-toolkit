@@ -1,0 +1,151 @@
+{
+	"author": "Vincent Steenstra Toussaint",
+	"id": "addisababa",
+	"base": "city",
+
+	"constants": {
+
+		"Swing"                 		: 1,
+		"Swing_Range"					: [1,12],
+		
+		"Rhythms"						: [12, 8, 4, 3, 1],
+		
+		"PeepEmbarks_Flam_Pulse"		: 4,
+		"PeepEmbarks_Rhythm"    		: 3,
+
+		"Percussion_PitchVar"   		: 0.30,
+
+		"FadeIn_Times"					: [0.25, 0, 0.125, 0],
+		
+		"Train_Engines"					: ["Three", "Orange", "SixEight", "TwelveSixteen"],
+
+		"Transpositions"				: [0, -2, -4, -6],
+
+		"PlayChords_GameOver"			: false,
+
+		"LineLoop_EmptyStations_Mute" 	: true	
+	},
+
+	"harmonies": {
+
+		"assignments": [0, 0, 0, 1, 0, 1],
+
+		"order": [	0, 1, 2, 3, 4, 5, 1, 
+					2, 3, 4, 6, 0, 7, 3, 4, 5, 1, 2, 
+					8, 6, 0, 7, 3, 4, 8, 6],
+
+		"weeks": [
+			{	"sequences": 	[["B3", "D#4", "F#4", "A#4", "C#4"],
+								 ["B3", "D#3", "F#3"]], 
+
+				"bass": 		 ["B", "C#", "D#", "G#", "E"],
+
+				"screens": {
+					"GameOver":	 ["E"],
+					"NewAsset":  ["F#"]
+				}
+			},
+
+			{	"sequences": 	[["C4", "D4", "F#4", "A4", "E4"],
+								 ["D3", "F#3", "A3"]],
+
+				"bass": 		 ["D", "A", "G"],
+
+				"screens": {
+					"GameOver":	 ["C"],
+					"NewAsset":	 ["A"]
+				}
+			},
+
+			{	"sequences": 	[["D4", "F#4", "G4", "B4", "A4"],
+								 ["G3", "B3", "A3"]], 
+								 
+				"bass": 		 ["G", "A", "B", "F#"],
+
+				"screens": {
+					"GameOver":	 ["E"],
+					"NewAsset":	 ["D"]
+				}
+			},
+
+			{	"sequences": 	[["D4", "F4", "G#4", "A#4", "C4"], 
+								 ["A#3", "C3", "F3"]], 
+
+				"bass": 		 ["A#", "D", "F"],
+
+				"screens": {
+					"GameOver":	 ["D"],
+					"NewAsset":	 ["F"]
+				}
+			},
+
+			{	"sequences": 	[["D4", "D#4", "G4", "A#4", "F4"], 
+								 ["D#3", "G3", "A#3"]], 
+
+				"bass": 		 ["D#", "G", "G#", "F", "C", "G#", "F", "A#"],
+
+				"screens": {
+					"GameOver":	 ["A#"],
+					"NewAsset":	 ["A#"]
+				}
+			},
+
+			{	"sequences": 	[["C4", "E4", "G4", "A4", "B4"], 
+								 ["C3", "E3", "A3"]],
+
+				"bass": 		 ["A", "C", "F", "A", "C", "G"],
+
+				"screens": {
+					"GameOver":	 ["E"],
+					"NewAsset":	 ["F"]
+				}
+			},
+
+			{	"sequences": 	[["C#4", "E4", "F#4", "A#4", "G#4"], 
+								 ["F#3", "A#3", "C#3"]],
+								 
+				"bass": 		 ["F#", "A#", "D#", "B"],
+
+				"screens": {
+					"GameOver":	 ["C#"],
+					"NewAsset":	 ["C#"]
+				}
+			},
+
+			{	"sequences": 	[["C4", "D#4", "F4", "G#4", "A#4"], 
+								 ["F3", "G#3", "A#3"]], 
+	
+				"bass": 		 ["F", "C#", "A#", "C"],
+
+				"screens": {
+					"GameOver":	 ["C"],
+					"NewAsset":	 ["D#"]
+				}
+			},
+
+			{	"sequences": 	[["C#4", "E4", "G#4", "B4", "D#4"], 
+								 ["C#3", "E3", "G#3"]], 
+	
+				"bass": 		 ["C#", "F#", "E", "G#", "B", "F#", "E", "F#"],
+
+				"screens": {
+					"GameOver":	 ["C#"],
+					"NewAsset":	 ["G#"]
+				}
+			}
+
+		]
+	},
+	
+	"modules": [{
+		"type": "Beat",
+		"filter": { "type": "CityStart" },
+		"Rhythms": [12],
+		"Rhythms_Double": [24],
+		"StartingWeekIndex": 0,
+		"FadeInLength": 0,
+		"gain": 1.0,
+		"pulse": 12
+	}]
+}
+
