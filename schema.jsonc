@@ -207,7 +207,7 @@
 					"minimum": 0
 				},
 				"PeepAppears_Flam_Pulse": {
-					"description": "How many subdivisions of the master pulse to use for triggering Peep Appears sounds.  These sounds are all subject to flamming (aka arpeggiation). This value represents a subdivision of the MasterPulse.",
+					"description": "How many subdivisions of the master pulse to use for triggering Peep Appears sounds. MUST BE LESS THAN OR EQUAL TO PeepEmbarks_Flam_Pulse. These sounds are all subject to flamming (aka arpeggiation). This value represents a subdivision of the MasterPulse.",
 					"type": "integer",
 					"minimum": 0
 				},

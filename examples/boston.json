@@ -10,7 +10,7 @@
 		"Chord_Playback"        : false,
 
 		"PeepEmbarks_Flam_Pulse": 4,
-		"PeepEmbarks_Rhythm"    : 6,
+		"PeepEmbarks_Rhythm"    : 2,
 
 		"Transpositions"        : [0, 1, 2, 3, 4],
 
